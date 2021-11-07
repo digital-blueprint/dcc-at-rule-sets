@@ -1,42 +1,31 @@
 {
     "AffectedFields": [
-        "v.0.mp",
-        "v.0.dt"
+        "t.0.sc",
+        "t.0.tt"
     ],
-    "CertificateType": "Vaccination",
+    "CertificateType": "Test",
     "Country": "AT",
     "Description": [
         {
-            "desc": "If (Vaccine == Johnson) -> Verification Datetime must be more than 22 days and less than 270 days after vaccination date",
+            "desc": "DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test).",
             "lang": "en"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "VR-AT-0007",
+    "Identifier": "TR-TUGRAZ-0006",
     "Logic": {
         "if": [
             {
-                "in": [
+                "===": [
                     {
-                        "var": "payload.v.0.mp"
+                        "var": "payload.t.0.tt"
                     },
-                    [
-                        "EU/1/20/1525"
-                    ]
+                    "LP6464-4"
                 ]
             },
             {
-                "not-after": [
-                    {
-                        "plusTime": [
-                            {
-                                "var": "payload.v.0.dt"
-                            },
-                            22,
-                            "day"
-                        ]
-                    },
+                "before": [
                     {
                         "plusTime": [
                             {
@@ -49,10 +38,10 @@
                     {
                         "plusTime": [
                             {
-                                "var": "payload.v.0.dt"
+                                "var": "payload.t.0.sc"
                             },
-                            270,
-                            "day"
+                            72,
+                            "hour"
                         ]
                     }
                 ]
@@ -60,10 +49,10 @@
             true
         ]
     },
-    "Region": "ET",
+    "Region": "TUGRAZ",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
-    "ValidFrom": "2021-08-15T00:00:00Z",
+    "ValidFrom": "2021-07-01T00:00:00Z",
     "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.2"
+    "Version": "1.0.0"
 }

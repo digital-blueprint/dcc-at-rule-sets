@@ -1,0 +1,35 @@
+name: main
+
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    runs-on: ubuntu-20.04
+    name: update-mirror
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y \
+            curl python3 python3-pip
+          pip3 install --user poetry
+          python3 -m poetry install
+
+      - name: Build
+        run: |
+          python3 -m poetry run build.py ./dir
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dir
+          publish_branch: main

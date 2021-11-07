@@ -15,7 +15,7 @@
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "VR-AT-0008",
+    "Identifier": "VR-TUGRAZ-0008",
     "Logic": {
         "if": [
             {
@@ -79,7 +79,7 @@
             true
         ]
     },
-    "Region": "ET",
+    "Region": "TUGRAZ",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
     "ValidFrom": "2021-09-15T05:00:00Z",

@@ -17,7 +17,7 @@
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "GR-AT-0001",
+    "Identifier": "GR-TUGRAZ-0001",
     "Logic": {
         "and": [
             {
@@ -76,7 +76,7 @@
             }
         ]
     },
-    "Region": "ET",
+    "Region": "TUGRAZ",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
     "ValidFrom": "2021-07-01T00:00:00Z",

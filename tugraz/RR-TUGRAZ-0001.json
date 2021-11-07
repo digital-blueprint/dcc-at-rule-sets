@@ -1,31 +1,30 @@
 {
     "AffectedFields": [
-        "t.0.sc",
-        "t.0.tt"
+        "r.0",
+        "r.0.fr"
     ],
-    "CertificateType": "Test",
+    "CertificateType": "Recovery",
     "Country": "AT",
     "Description": [
         {
-            "desc": "DateTime of Sample Collection must be less than 24 hours before the Verification Datetime for a test of type RAT (rapid antigen test).",
+            "desc": "The positive NAA test result (e.g., PCR) must be older than 11 days.",
             "lang": "en"
+        },
+        {
+            "desc": "Der positive NAA-Test (z.B. PCR) muss mindestens 11 Tage zur\u00fcckliegen.",
+            "lang": "de"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "TR-AT-0005",
+    "Identifier": "RR-TUGRAZ-0001",
     "Logic": {
         "if": [
             {
-                "===": [
-                    {
-                        "var": "payload.t.0.tt"
-                    },
-                    "LP217198-3"
-                ]
+                "var": "payload.r.0"
             },
             {
-                "before": [
+                "not-before": [
                     {
                         "plusTime": [
                             {
@@ -38,10 +37,10 @@
                     {
                         "plusTime": [
                             {
-                                "var": "payload.t.0.sc"
+                                "var": "payload.r.0.fr"
                             },
-                            24,
-                            "hour"
+                            11,
+                            "day"
                         ]
                     }
                 ]
@@ -49,10 +48,10 @@
             true
         ]
     },
-    "Region": "ET",
+    "Region": "TUGRAZ",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
-    "ValidFrom": "2021-09-15T05:00:00Z",
-    "ValidTo": "2030-06-01T00:00:00Z",
+    "ValidFrom": "2021-07-01T00:00:00Z",
+    "ValidTo": "2021-09-15T05:00:00Z",
     "Version": "1.0.0"
 }
