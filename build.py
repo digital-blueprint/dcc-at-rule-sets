@@ -1,15 +1,20 @@
+#!/usr/bin/env python3
+
 import os
 import sys
 import glob
 import json
 
 
-def main(argv):
-    target = argv[1]
+DIR = os.path.dirname(os.path.realpath(__file__))
 
-    for s in ["tugraz"]:
+def main(argv):
+    target = os.path.abspath(argv[1])
+
+    for name in ["tugraz"]:
+        source = os.path.join(DIR, name)
         rules = []
-        for path in sorted(glob.glob(s + "/*.json")):
+        for path in sorted(glob.glob(source + "/*.json")):
             with open(path, "rb") as h:
                 decoded = json.loads(h.read())
                 rules.append({
@@ -17,7 +22,7 @@ def main(argv):
                     "r": json.dumps(decoded),
                 })
         os.makedirs(target, exist_ok=True)
-        with open(os.path.join(target, s + ".json"), "w", encoding="utf-8") as h:
+        with open(os.path.join(target, name + ".json"), "w", encoding="utf-8") as h:
             h.write(json.dumps({"r": rules}, indent=2))
 
 
