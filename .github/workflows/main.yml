@@ -25,6 +25,7 @@ jobs:
       - name: Build
         run: |
           python3 -m poetry run ./build.py ./dir/sets
+          cp index.html ./dir/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
