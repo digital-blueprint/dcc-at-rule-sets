@@ -1,0 +1,57 @@
+{
+    "AffectedFields": [
+        "r.0",
+        "r.0.fr"
+    ],
+    "CertificateType": "Recovery",
+    "Country": "AT",
+    "Description": [
+        {
+            "desc": "The positive NAA test result (e.g., PCR) must be older than 11 days.",
+            "lang": "en"
+        },
+        {
+            "desc": "Der positive NAA-Test (z.B. PCR) muss mindestens 11 Tage zur\u00fcckliegen.",
+            "lang": "de"
+        }
+    ],
+    "Engine": "CERTLOGIC",
+    "EngineVersion": "0.7.5",
+    "Identifier": "RR-AT-0001",
+    "Logic": {
+        "if": [
+            {
+                "var": "payload.r.0"
+            },
+            {
+                "not-before": [
+                    {
+                        "plusTime": [
+                            {
+                                "var": "external.validationClock"
+                            },
+                            0,
+                            "day"
+                        ]
+                    },
+                    {
+                        "plusTime": [
+                            {
+                                "var": "payload.r.0.fr"
+                            },
+                            11,
+                            "day"
+                        ]
+                    }
+                ]
+            },
+            true
+        ]
+    },
+    "Region": "ET",
+    "SchemaVersion": "1.0.0",
+    "Type": "Acceptance",
+    "ValidFrom": "2021-07-01T00:00:00Z",
+    "ValidTo": "2021-09-15T05:00:00Z",
+    "Version": "1.0.0"
+}
