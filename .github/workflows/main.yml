@@ -2,6 +2,8 @@ name: main
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
   push:
     branches-ignore:
       - main
@@ -25,6 +27,7 @@ jobs:
       - name: Build
         run: |
           python3 -m poetry run ./build.py ./dir/sets
+          python3 -m poetry run ./import.py ./dir/sets
           cp index.html ./dir/
 
       - name: Deploy

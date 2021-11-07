@@ -7,11 +7,16 @@ Maintained sets:
 
 * **TUGRAZ:** The rules for accessing a building of the TU Graz
 
+Mirrored sets:
+
+* **AT-PROD:** https://dgc-trust.qr.gv.at/trustlist
+* **AT-TEST:** https://dgc-trusttest.qr.gv.at/trustlist
+
 The format of the specific rules follows the official EU-DCC standard as
 described here:
 https://github.com/eu-digital-green-certificates/dgc-business-rules-testdata
 
-The format of the rule sets mirrors the CBOR encoded business rules as described
+The format of the rule sets mirrors the CBOR decoded business rules as described
 here: https://github.com/Federal-Ministry-of-Health-AT/green-pass-overview
 
 Feel free contribute your own set.
