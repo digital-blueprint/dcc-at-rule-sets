@@ -7,13 +7,13 @@
     "Country": "AT",
     "Description": [
         {
-            "desc": "If (Vaccine == Johnson && dn == 1) -> Verification Datetime must be more than 22 days and less than 270 days after vaccination date",
+            "desc": "If (Vaccine == Johnson && dn >= sd && dn != 1) -> Verification Datetime must be less than 270 days after vaccination date",
             "lang": "en"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "VR-TUGRAZ-0007",
+    "Identifier": "VR-TUGRAZ-0007-booster",
     "Logic": {
         "if": [
             {
@@ -29,11 +29,25 @@
             {
                 "if": [
                     {
-                        "===": [
+                        "and": [
                             {
-                                "var": "payload.v.0.dn"
+                                ">=": [
+                                    {
+                                        "var": "payload.v.0.dn"
+                                    },
+                                    {
+                                        "var": "payload.v.0.sd"
+                                    }
+                                ]
                             },
-                            1
+                            {
+                                ">": [
+                                    {
+                                        "var": "payload.v.0.dn"
+                                    },
+                                    1
+                                ]
+                            }
                         ]
                     },
                     {
@@ -43,7 +57,7 @@
                                     {
                                         "var": "payload.v.0.dt"
                                     },
-                                    22,
+                                    0,
                                     "day"
                                 ]
                             },
