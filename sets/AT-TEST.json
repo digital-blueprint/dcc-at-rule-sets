@@ -630,7 +630,7 @@
     },
     {
       "i": "RR-SI-0001",
-      "r": "{\"Identifier\":\"RR-SI-0001\",\"Type\":\"Acceptance\",\"Country\":\"SI\",\"Version\":\"1.1.0\",\"SchemaVersion\":\"1.3.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The certificate validity period is between 11 and 240 days inclusive after the test date.\"},{\"lang\":\"si\",\"desc\":\"Obseg veljavnosti potrdila je vklju\u010dno med 11. in 240. dnem po datumu testa.\"}],\"ValidFrom\":\"2021-09-11T00:00:00Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},11,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},240,\"day\"]}]},true]}}"
+      "r": "{\"Identifier\":\"RR-SI-0001\",\"Type\":\"Acceptance\",\"Country\":\"SI\",\"Version\":\"1.1.0\",\"SchemaVersion\":\"1.3.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The Verification Datetime must be between +11 days and +180 days, inclusive after the test date.\"},{\"lang\":\"si\",\"desc\":\"Veljavnost potrdila mora biti vklju\u010dno med 11. in 180. dnem po datumu testa.\"}],\"ValidFrom\":\"2021-11-15T00:00:00Z\",\"ValidTo\":\"2030-07-26T00:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},11,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},180,\"day\"]}]},true]}}"
     },
     {
       "i": "GR-SI-0001",
