@@ -1,0 +1,58 @@
+{
+    "AffectedFields": [
+        "t.0.sc",
+        "t.0.tt"
+    ],
+    "CertificateType": "Test",
+    "Country": "AT",
+    "Description": [
+        {
+            "desc": "DateTime of Sample Collection must be less than 24 hours before the Verification Datetime for a test of type RAT (rapid antigen test).",
+            "lang": "en"
+        }
+    ],
+    "Engine": "CERTLOGIC",
+    "EngineVersion": "0.7.5",
+    "Identifier": "TR-PLUS-0005",
+    "Logic": {
+        "if": [
+            {
+                "===": [
+                    {
+                        "var": "payload.t.0.tt"
+                    },
+                    "LP217198-3"
+                ]
+            },
+            {
+                "before": [
+                    {
+                        "plusTime": [
+                            {
+                                "var": "external.validationClock"
+                            },
+                            0,
+                            "day"
+                        ]
+                    },
+                    {
+                        "plusTime": [
+                            {
+                                "var": "payload.t.0.sc"
+                            },
+                            24,
+                            "hour"
+                        ]
+                    }
+                ]
+            },
+            true
+        ]
+    },
+    "Region": "ET",
+    "SchemaVersion": "1.0.0",
+    "Type": "Acceptance",
+    "ValidFrom": "2021-09-15T05:00:00Z",
+    "ValidTo": "2030-06-01T00:00:00Z",
+    "Version": "1.0.0"
+}

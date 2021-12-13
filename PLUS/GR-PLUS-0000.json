@@ -1,0 +1,65 @@
+{
+    "AffectedFields": [
+        "r",
+        "t",
+        "v"
+    ],
+    "CertificateType": "General",
+    "Country": "AT",
+    "Description": [
+        {
+            "desc": "Exactly one type of event.",
+            "lang": "en"
+        },
+        {
+            "desc": "Genau ein Event-Typ vorhanden.",
+            "lang": "de"
+        }
+    ],
+    "Engine": "CERTLOGIC",
+    "EngineVersion": "0.7.5",
+    "Identifier": "GR-PLUS-0000",
+    "Logic": {
+        "===": [
+            {
+                "reduce": [
+                    [
+                        {
+                            "var": "payload.r"
+                        },
+                        {
+                            "var": "payload.t"
+                        },
+                        {
+                            "var": "payload.v"
+                        }
+                    ],
+                    {
+                        "+": [
+                            {
+                                "var": "accumulator"
+                            },
+                            {
+                                "if": [
+                                    {
+                                        "var": "current.0"
+                                    },
+                                    1,
+                                    0
+                                ]
+                            }
+                        ]
+                    },
+                    0
+                ]
+            },
+            1
+        ]
+    },
+    "Region": "ET",
+    "SchemaVersion": "1.0.0",
+    "Type": "Acceptance",
+    "ValidFrom": "2021-07-01T00:00:00Z",
+    "ValidTo": "2030-06-01T00:00:00Z",
+    "Version": "1.0.0"
+}
