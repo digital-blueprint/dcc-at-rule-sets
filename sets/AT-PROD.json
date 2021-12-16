@@ -485,8 +485,16 @@
       "r": "{\"Identifier\":\"VR-FR-0008\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.1\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"With not Jansen vaccine, a finished vaccination course is considered protective earliest from 7 days after the date of the last vaccination.\"},{\"lang\":\"fr\",\"desc\":\"Avec le vaccin autre que Jansen le sch\u00e9ma vaccinal est consid\u00e9r\u00e9 comme complet 7 jours apr\u00e8s la date de la derni\u00e8re injection.\"}],\"ValidFrom\":\"2021-12-11T12:00:00Z\",\"ValidTo\":\"2021-12-14T12:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\",\"Covishield\",\"R-Covi\",\"R-COVI\",\"Covid-19 vaccine (recombinante)\"]]},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},7,\"day\"]}]},true]},true]}}"
     },
     {
+      "i": "VR-FR-0008",
+      "r": "{\"Identifier\":\"VR-FR-0008\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"With not Jansen vaccine, a finished vaccination course is considered protective earliest from 7 days after the date of the last vaccination.\"},{\"lang\":\"fr\",\"desc\":\"Avec le vaccin autre que Jansen le sch\u00e9ma vaccinal est consid\u00e9r\u00e9 comme complet 7 jours apr\u00e8s la date de la derni\u00e8re injection.\"}],\"ValidFrom\":\"2021-12-17T18:00:00Z\",\"ValidTo\":\"2031-12-17T18:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\",\"Covishield\",\"R-Covi\",\"R-COVI\",\"Covid-19 vaccine (recombinante)\"]]},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},7,\"day\"]}]},true]},true]}}"
+    },
+    {
       "i": "VR-FR-0009",
       "r": "{\"Identifier\":\"VR-FR-0009\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.1\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only manufacturers in the allowed valueset that have been approved by the EMA are allowed.\"},{\"lang\":\"fr\",\"desc\":\"Seuls les fabicants approuv\u00e9s par l'AEM (Value set UE) sont accept\u00e9s en France.\"}],\"ValidFrom\":\"2021-12-11T12:00:00Z\",\"ValidTo\":\"2021-12-14T12:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.ma\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.ma\"},{\"var\":\"external.valueSets.vaccines-covid-19-auth-holders\"}]},true]}}"
+    },
+    {
+      "i": "VR-FR-0009",
+      "r": "{\"Identifier\":\"VR-FR-0009\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only manufacturers in the allowed valueset that have been approved by the EMA are allowed.\"},{\"lang\":\"fr\",\"desc\":\"Seuls les fabicants approuv\u00e9s par l'AEM (Value set UE) sont accept\u00e9s en France.\"}],\"ValidFrom\":\"2021-12-17T18:00:00Z\",\"ValidTo\":\"2031-12-17T18:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.ma\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.ma\"},{\"var\":\"external.valueSets.vaccines-covid-19-auth-holders\"}]},true]}}"
     },
     {
       "i": "VR-FR-0006",
@@ -501,12 +509,20 @@
       "r": "{\"Identifier\":\"VR-FR-0004\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"With Jansen vaccine, a finished vaccination course is considered protective earliest from 28 days after the date of the last vaccination.\"},{\"lang\":\"fr\",\"desc\":\"Avec le vaccin Jansen, un parcours vaccinal termin\u00e9 est consider\u00e9 comme protecteur au plus t\u00f4t \u00e0 partir de 28 jours apr\u00e8s la date de la derni\u00e8re injection.\"}],\"ValidFrom\":\"2021-12-11T12:00:00Z\",\"ValidTo\":\"2021-12-14T12:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},28,\"day\"]}]},true]},true]}}"
     },
     {
+      "i": "VR-FR-0004",
+      "r": "{\"Identifier\":\"VR-FR-0004\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.4\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"With Jansen vaccine, a finished vaccination course is considered protective earliest from 28 days after the date of the last vaccination.\"},{\"lang\":\"fr\",\"desc\":\"Avec le vaccin Jansen, un parcours vaccinal termin\u00e9 est consider\u00e9 comme protecteur au plus t\u00f4t \u00e0 partir de 28 jours apr\u00e8s la date de la derni\u00e8re injection.\"}],\"ValidFrom\":\"2021-12-17T18:00:00Z\",\"ValidTo\":\"2031-12-17T18:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},28,\"day\"]}]},true]},true]}}"
+    },
+    {
       "i": "VR-FR-0005",
       "r": "{\"Identifier\":\"VR-FR-0005\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"With Moderna vaccine, a finished vaccination course is considered protective earliest from 28 days after the date of the last vaccination.\"},{\"lang\":\"fr\",\"desc\":\"Avec le vaccin Moderna, un parcours vaccinale termin\u00e9 est consider\u00e9 comme protecteur au plus t\u00f4t \u00e0 partir de 7 jours apr\u00e8s la date de la derni\u00e8re injection.\"}],\"ValidFrom\":\"2021-12-11T12:00:00Z\",\"ValidTo\":\"2021-12-14T12:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1507\"]},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},7,\"day\"]}]},true]},true]}}"
     },
     {
       "i": "RR-FR-0000",
       "r": "{\"Identifier\":\"RR-FR-0000\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\" Recovery format is not EU standard.\"},{\"lang\":\"fr\",\"desc\":\"Le format li\u00e9 au r\u00e9tablissement n'est pas au standard UE.\"}],\"ValidFrom\":\"2021-12-11T12:00:00Z\",\"ValidTo\":\"2021-12-14T12:00:00Z\",\"AffectedFields\":[\"r.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.r.1\"}]}}"
+    },
+    {
+      "i": "VR-FR-0002",
+      "r": "{\"Identifier\":\"VR-FR-0002\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccination doses must be equal or greater than expected doses.\"},{\"lang\":\"fr\",\"desc\":\"Le nombre de doses prises doit etre superieur ou \u00e9gale au nombre de doses attendues.\"}],\"ValidFrom\":\"2021-12-17T18:00:00Z\",\"ValidTo\":\"2031-12-17T18:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},true]}}"
     },
     {
       "i": "VR-FR-0002",
@@ -521,6 +537,10 @@
       "r": "{\"Identifier\":\"VR-FR-0003\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Date of vaccination must be before the current date.\"},{\"lang\":\"fr\",\"desc\":\"La date de vaccination doit \u00eatre ant\u00e9rieure \u00e0 la date de lecture de la preuve de vaccination.\"}],\"ValidFrom\":\"2021-12-11T12:00:00Z\",\"ValidTo\":\"2021-12-14T12:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},0,\"day\"]}]},true]}}"
     },
     {
+      "i": "VR-FR-0003",
+      "r": "{\"Identifier\":\"VR-FR-0003\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.4\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Date of vaccination must be before the current date.\"},{\"lang\":\"fr\",\"desc\":\"La date de vaccination doit \u00eatre ant\u00e9rieure \u00e0 la date de lecture de la preuve de vaccination.\"}],\"ValidFrom\":\"2021-12-17T18:00:00Z\",\"ValidTo\":\"2031-12-17T18:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},0,\"day\"]}]},true]}}"
+    },
+    {
       "i": "GR-FR-0000",
       "r": "{\"Identifier\":\"GR-FR-0000\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only test is allowed, and in a EU standard format.\"},{\"lang\":\"fr\",\"desc\":\"Seuls un test est autoris\u00e9, et dans un format au standard UE.\"}],\"ValidFrom\":\"2021-12-11T12:00:00Z\",\"ValidTo\":\"2030-12-11T00:00:00Z\",\"AffectedFields\":[\"t\"],\"Logic\":{\"===\":[{\"reduce\":[[{\"var\":\"payload.t\"}],{\"+\":[{\"var\":\"accumulator\"},{\"if\":[{\"var\":\"current.0\"},1,0]}]},0]},1]}}"
     },
@@ -529,8 +549,16 @@
       "r": "{\"Identifier\":\"VR-FR-0000\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccin format is not EU standard.\"},{\"lang\":\"fr\",\"desc\":\"Le format li\u00e9 au vaccin n'est pas au standard UE.\"}],\"ValidFrom\":\"2021-12-11T12:00:00Z\",\"ValidTo\":\"2021-12-14T12:00:00Z\",\"AffectedFields\":[\"v.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.v.1\"}]}}"
     },
     {
+      "i": "VR-FR-0000",
+      "r": "{\"Identifier\":\"VR-FR-0000\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.4\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccin format is not EU standard.\"},{\"lang\":\"fr\",\"desc\":\"Le format li\u00e9 au vaccin n'est pas au standard UE.\"}],\"ValidFrom\":\"2021-12-17T18:00:00Z\",\"ValidTo\":\"2031-12-17T18:00:00Z\",\"AffectedFields\":[\"v.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.v.1\"}]}}"
+    },
+    {
       "i": "VR-FR-0001",
       "r": "{\"Identifier\":\"VR-FR-0001\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only vaccines in the allowed valueset that have been approved by the ANSM or Covishield, R-COVI and Fiocruz-covid-19 vaccines are allowed.\"},{\"lang\":\"fr\",\"desc\":\"Seuls les vaccins approuv\u00e9s par l'ANSM sont accept\u00e9s en France (Pfizer, Moderna, Astra Zeneca, Janssen, Covishield, R-covi et Covid 19 Vaccine).\"}],\"ValidFrom\":\"2021-12-11T12:00:00Z\",\"ValidTo\":\"2021-12-14T12:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\",\"EU/1/20/1525\",\"Covishield\",\"R-Covi\",\"R-COVI\",\"Covid-19 vaccine (recombinante)\"]]},true]}}"
+    },
+    {
+      "i": "VR-FR-0001",
+      "r": "{\"Identifier\":\"VR-FR-0001\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.4\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only vaccines in the allowed valueset that have been approved by the ANSM or Covishield, R-COVI and Fiocruz-covid-19 vaccines are allowed.\"},{\"lang\":\"fr\",\"desc\":\"Seuls les vaccins approuv\u00e9s par l'ANSM sont accept\u00e9s en France (Pfizer, Moderna, Astra Zeneca, Janssen, Covishield, R-covi et Covid 19 Vaccine).\"}],\"ValidFrom\":\"2021-12-17T18:00:00Z\",\"ValidTo\":\"2031-12-17T18:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\",\"EU/1/20/1525\",\"Covishield\",\"R-Covi\",\"R-COVI\",\"Covid-19 vaccine (recombinante)\"]]},true]}}"
     },
     {
       "i": "GR-FR-0001",
@@ -539,6 +567,10 @@
     {
       "i": "VR-FR-0010",
       "r": "{\"Identifier\":\"VR-FR-0010\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.1\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only prophylactic agents in the allowed valueset that have been approved by the EMA are allowed.\"},{\"lang\":\"fr\",\"desc\":\"Seuls les agents prophylactiques approuv\u00e9s par l'AEM (Value set UE) sont accept\u00e9s en France.\"}],\"ValidFrom\":\"2021-12-11T12:00:00Z\",\"ValidTo\":\"2021-12-14T12:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.vp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.vp\"},{\"var\":\"external.valueSets.sct-vaccines-covid-19\"}]},true]}}"
+    },
+    {
+      "i": "VR-FR-0010",
+      "r": "{\"Identifier\":\"VR-FR-0010\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only prophylactic agents in the allowed valueset that have been approved by the EMA are allowed.\"},{\"lang\":\"fr\",\"desc\":\"Seuls les agents prophylactiques approuv\u00e9s par l'AEM (Value set UE) sont accept\u00e9s en France.\"}],\"ValidFrom\":\"2021-12-17T18:00:00Z\",\"ValidTo\":\"2031-12-17T18:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.vp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.vp\"},{\"var\":\"external.valueSets.sct-vaccines-covid-19\"}]},true]}}"
     },
     {
       "i": "TR-FR-0001",
@@ -706,23 +738,11 @@
     },
     {
       "i": "RR-CZ-0002",
-      "r": "{\"Identifier\":\"RR-CZ-0002\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive NAA test result (e.g., PCR) must be no older than 180\u00a0days.\"},{\"lang\":\"cs\",\"desc\":\"Pozitivn\u00ed PCR test nesm\u00ed b\u00fdt star\u0161\u00ed jak 180 dn\u00ed.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},180,\"day\"]}]},true]}}"
-    },
-    {
-      "i": "RR-CZ-0002",
       "r": "{\"Identifier\":\"RR-CZ-0002\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive PCR test result may not be older than 180 days\"},{\"lang\":\"cs\",\"desc\":\"Pozitivn\u00ed PCR test nesm\u00ed b\u00fdt star\u0161\u00ed  v\u00edce ne\u017e 180 dn\u00ed\"}],\"ValidFrom\":\"2021-12-15T23:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},180,\"day\"]}]},true]}}"
     },
     {
       "i": "RR-CZ-0001",
-      "r": "{\"Identifier\":\"RR-CZ-0001\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive NAA test result (e.g., PCR) must be older than 10 days.\"},{\"lang\":\"cs\",\"desc\":\"Pozitivn\u00ed PCR test mus\u00ed b\u00fdt star\u0161\u00ed jak 10 dn\u00ed.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},10,\"day\"]}]},true]}}"
-    },
-    {
-      "i": "RR-CZ-0001",
       "r": "{\"Identifier\":\"RR-CZ-0001\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Recovery\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The positive PCR test result must be older than 10 days\"},{\"lang\":\"cs\",\"desc\":\"Pozitivn\u00ed PCR test mus\u00ed b\u00fdt star\u0161\u00ed v\u00edce ne\u017e 10 dn\u00ed\"}],\"ValidFrom\":\"2021-12-15T23:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.fr\"],\"Logic\":{\"if\":[{\"var\":\"payload.r.0\"},{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.r.0.fr\"},10,\"day\"]}]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0041",
-      "r": "{\"Identifier\":\"VR-CZ-0041\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine VAXZEVRIA must have been administered no longer than 1440 days ago.\"},{\"lang\":\"cs\",\"desc\":\"O\u010dkov\u00e1n\u00ed VAXZEVRIA nesm\u00ed b\u00fdt star\u0161\u00ed ne\u017e 1440 dn\u00ed.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/21/1529\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},1440,\"day\"]}]},true]},true]}}"
     },
     {
       "i": "VR-CZ-0041",
@@ -734,15 +754,7 @@
     },
     {
       "i": "VR-CZ-0031",
-      "r": "{\"Identifier\":\"VR-CZ-0031\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine Comirnaty must have been administered no longer than 1440 days ago.\"},{\"lang\":\"cs\",\"desc\":\"O\u010dkov\u00e1n\u00ed Comirnaty nesm\u00ed b\u00fdt star\u0161\u00ed ne\u017e 1440 dn\u00ed.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1528\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},1440,\"day\"]}]},true]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0031",
       "r": "{\"Identifier\":\"VR-CZ-0031\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccination Comirnaty may not be older than 1440 days\"},{\"lang\":\"cs\",\"desc\":\"O\u010dkov\u00e1n\u00ed Comirnaty nesm\u00ed b\u00fdt star\u0161\u00ed ne\u017e 1440 dn\u00ed\"}],\"ValidFrom\":\"2021-12-15T23:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1528\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},1440,\"day\"]}]},true]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0042",
-      "r": "{\"Identifier\":\"VR-CZ-0042\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine VAXZEVRIA must have been administered at least more than 14 day ago. Booster dose is valid immediately.\"},{\"lang\":\"cs\",\"desc\":\"Od dokon\u010den\u00e9ho o\u010dkov\u00e1n\u00ed VAXZEVRIA mus\u00ed uplynout alespo\u0148 14 dn\u016f. Posilovac\u00ed d\u00e1vka je platn\u00e1 ihned.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"and\":[{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/21/1529\"]}]},{\"in\":[true,[{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]},{\">\":[{\"var\":\"payload.v.0.dn\"},2]},{\"and\":[{\"===\":[{\"var\":\"payload.v.0.sd\"},1]},{\"===\":[{\"var\":\"payload.v.0.dn\"},1]}]}]]},true]},true]}}"
     },
     {
       "i": "VR-CZ-0042",
@@ -766,15 +778,7 @@
     },
     {
       "i": "TR-CZ-0004",
-      "r": "{\"Identifier\":\"TR-CZ-0004\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The test result must be negative.\"},{\"lang\":\"cs\",\"desc\":\"V\u00fdsledek testu mus\u00ed b\u00fdt negativn\u00ed.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.tr\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"===\":[{\"var\":\"payload.t.0.tr\"},\"260415000\"]},true]}}"
-    },
-    {
-      "i": "TR-CZ-0004",
       "r": "{\"Identifier\":\"TR-CZ-0004\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The test result must be negative\"},{\"lang\":\"cs\",\"desc\":\"V\u00fdsledek testu mus\u00ed b\u00fdt negativn\u00ed\"}],\"ValidFrom\":\"2021-12-15T23:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.tr\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"===\":[{\"var\":\"payload.t.0.tr\"},\"260415000\"]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0001",
-      "r": "{\"Identifier\":\"VR-CZ-0001\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only vaccines in the allowed valueset that have been approved Comirnaty, COVID-19 Vaccine Janssen, SPIKEVAX, VAXZEVRIA.\"},{\"lang\":\"cs\",\"desc\":\"Vakc\u00edna mus\u00ed b\u00fdt na seznamu schv\u00e1len\u00fdch vakc\u00edn: Comirnaty, COVID-19 Vaccine Janssen, SPIKEVAX, VAXZEVRIA\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1507\",\"EU/1/20/1525\",\"EU/1/20/1528\",\"EU/1/21/1529\"]]},true]}}"
     },
     {
       "i": "VR-CZ-0001",
@@ -782,15 +786,7 @@
     },
     {
       "i": "VR-CZ-0012",
-      "r": "{\"Identifier\":\"VR-CZ-0012\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine SPIKEVAX must have been administered at least more than 14 day ago. Booster dose is valid immediately.\"},{\"lang\":\"cs\",\"desc\":\"Od dokon\u010den\u00e9ho o\u010dkov\u00e1n\u00ed SPIKEVAX mus\u00ed uplynout alespo\u0148 14 dn\u016f. Posilovac\u00ed d\u00e1vka je platn\u00e1 ihned.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"and\":[{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1507\"]}]},{\"in\":[true,[{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]},{\">\":[{\"var\":\"payload.v.0.dn\"},2]},{\"and\":[{\"===\":[{\"var\":\"payload.v.0.sd\"},1]},{\"===\":[{\"var\":\"payload.v.0.dn\"},1]}]}]]},true]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0012",
       "r": "{\"Identifier\":\"VR-CZ-0012\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccination SPIKEVAX must must be older than 14 days\"},{\"lang\":\"cs\",\"desc\":\"Od dokon\u010den\u00e9ho o\u010dkov\u00e1n\u00ed SPIKEVAX mus\u00ed uplynout alespo\u0148 14 dn\u016f\"}],\"ValidFrom\":\"2021-12-15T23:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"and\":[{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1507\"]}]},{\"in\":[true,[{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]},{\">\":[{\"var\":\"payload.v.0.dn\"},2]},{\"and\":[{\"===\":[{\"var\":\"payload.v.0.sd\"},1]},{\"===\":[{\"var\":\"payload.v.0.dn\"},1]}]}]]},true]},true]}}"
-    },
-    {
-      "i": "TR-CZ-0003",
-      "r": "{\"Identifier\":\"TR-CZ-0003\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The antigen test (e.g., rapid test) must be included in the EU\u2019s Common list of COVID-19 rapid antigen tests.\"},{\"lang\":\"cs\",\"desc\":\"Antigenn\u00ed test mus\u00ed m\u00edt v\u00fdrobce uzn\u00e1van\u00e9ho v r\u00e1mci EU a mus\u00ed b\u00fdt sou\u010d\u00e1st\u00ed seznamu publikovan\u00fdch v\u00fdrobc\u016f.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.ma\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"in\":[{\"var\":\"payload.t.0.ma\"},{\"var\":\"external.valueSets.covid-19-lab-test-manufacturer-and-name\"}]},true]},true]}}"
     },
     {
       "i": "TR-CZ-0003",
@@ -798,15 +794,7 @@
     },
     {
       "i": "VR-CZ-0013",
-      "r": "{\"Identifier\":\"VR-CZ-0013\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine SPIKEVAX must have been completed.\"},{\"lang\":\"cs\",\"desc\":\"O\u010dkov\u00e1n\u00ed SPIKEVAX b\u00fdt dokon\u010den\u00e9.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1507\"]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},true]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0013",
       "r": "{\"Identifier\":\"VR-CZ-0013\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The certificate of the first dose of SPIKEVAX is not accepted\"},{\"lang\":\"cs\",\"desc\":\"Certifik\u00e1t prvn\u00ed d\u00e1vky SPIKEVAX nen\u00ed akceptov\u00e1n\"}],\"ValidFrom\":\"2021-12-15T23:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1507\"]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},true]},true]}}"
-    },
-    {
-      "i": "TR-CZ-0002",
-      "r": "{\"Identifier\":\"TR-CZ-0002\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The sample for an NAA test (e.g., PCR) must have been taken no longer than 72 hours ago.\"},{\"lang\":\"cs\",\"desc\":\"Vzorek PCR testu nesm\u00ed b\u00fdt star\u0161\u00ed ne\u017e 72 hodin.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP6464-4\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},72,\"hour\"]}]},true]},true]}}"
     },
     {
       "i": "TR-CZ-0002",
@@ -814,15 +802,7 @@
     },
     {
       "i": "VR-CZ-0021",
-      "r": "{\"Identifier\":\"VR-CZ-0021\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine COVID-19 Vaccine Janssen must have been administered no longer than 1440 days ago.\"},{\"lang\":\"cs\",\"desc\":\"O\u010dkov\u00e1n\u00ed COVID-19 Vaccine Janssen nesm\u00ed b\u00fdt star\u0161\u00ed ne\u017e 1440 dn\u00ed.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},1440,\"day\"]}]},true]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0021",
       "r": "{\"Identifier\":\"VR-CZ-0021\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccination COVID-19 Vaccine Janssen may not be older than 1440 days\"},{\"lang\":\"cs\",\"desc\":\"O\u010dkov\u00e1n\u00ed COVID-19 Vaccine Janssen nesm\u00ed b\u00fdt star\u0161\u00ed ne\u017e 1440 dn\u00ed\"}],\"ValidFrom\":\"2021-12-15T23:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},1440,\"day\"]}]},true]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0032",
-      "r": "{\"Identifier\":\"VR-CZ-0032\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine Comirnaty must have been administered at least more than 14 day ago. Booster dose is valid immediately.\"},{\"lang\":\"cs\",\"desc\":\"Od dokon\u010den\u00e9ho o\u010dkov\u00e1n\u00ed Comirnaty mus\u00ed uplynout alespo\u0148 14 dn\u016f. Posilovac\u00ed d\u00e1vka je platn\u00e1 ihned.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"and\":[{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1528\"]}]},{\"in\":[true,[{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]},{\">\":[{\"var\":\"payload.v.0.dn\"},2]},{\"and\":[{\"===\":[{\"var\":\"payload.v.0.sd\"},1]},{\"===\":[{\"var\":\"payload.v.0.dn\"},1]}]}]]},true]},true]}}"
     },
     {
       "i": "VR-CZ-0032",
@@ -830,15 +810,7 @@
     },
     {
       "i": "VR-CZ-0043",
-      "r": "{\"Identifier\":\"VR-CZ-0043\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine VAXZEVRIA must have been completed.\"},{\"lang\":\"cs\",\"desc\":\"O\u010dkov\u00e1n\u00ed VAXZEVRIA b\u00fdt dokon\u010den\u00e9.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/21/1529\"]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},true]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0043",
       "r": "{\"Identifier\":\"VR-CZ-0043\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The certificate of the first dose of Comirnaty 5-11 is not accepted\"},{\"lang\":\"cs\",\"desc\":\"Certifik\u00e1t prvn\u00ed d\u00e1vky Comirnaty 5-11 nen\u00ed akceptov\u00e1n\"}],\"ValidFrom\":\"2021-12-15T23:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1528\"]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},true]},true]}}"
-    },
-    {
-      "i": "TR-CZ-0001",
-      "r": "{\"Identifier\":\"TR-CZ-0001\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Test\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The sample for an antigen test (e.g., rapid test) must have been taken no longer than 24 hours ago.\"},{\"lang\":\"cs\",\"desc\":\"Vzorek antigenn\u00edho testu nesm\u00ed b\u00fdt star\u0161\u00ed ne\u017e 24 hodin.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"t.0\",\"t.0.sc\",\"t.0.tt\"],\"Logic\":{\"if\":[{\"var\":\"payload.t.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.t.0.tt\"},\"LP217198-3\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.t.0.sc\"},24,\"hour\"]}]},true]},true]}}"
     },
     {
       "i": "TR-CZ-0001",
@@ -846,23 +818,11 @@
     },
     {
       "i": "VR-CZ-0011",
-      "r": "{\"Identifier\":\"VR-CZ-0011\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine SPIKEVAX must have been administered no longer than 1440 days ago.\"},{\"lang\":\"cs\",\"desc\":\"O\u010dkov\u00e1n\u00ed SPIKEVAX nesm\u00ed b\u00fdt star\u0161\u00ed ne\u017e 1440 dn\u00ed.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1507\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},1440,\"day\"]}]},true]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0011",
       "r": "{\"Identifier\":\"VR-CZ-0011\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccination SPIKEVAX may not be older than 1440 days\"},{\"lang\":\"cs\",\"desc\":\"O\u010dkov\u00e1n\u00ed SPIKEVAX nesm\u00ed b\u00fdt star\u0161\u00ed ne\u017e 1440 dn\u00ed\"}],\"ValidFrom\":\"2021-12-15T23:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1507\"]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},1440,\"day\"]}]},true]},true]}}"
     },
     {
       "i": "VR-CZ-0022",
-      "r": "{\"Identifier\":\"VR-CZ-0022\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine COVID-19 Vaccine Janssen must have been administered at least more than 14 day ago. Booster dose is valid immediately.\"},{\"lang\":\"cs\",\"desc\":\"Od dokon\u010den\u00e9ho o\u010dkov\u00e1n\u00ed COVID-19 Vaccine Janssen mus\u00ed uplynout alespo\u0148 14 dn\u016f. Posilovac\u00ed d\u00e1vka je platn\u00e1 ihned.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"and\":[{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]}]},{\"if\":[{\">\":[{\"var\":\"payload.v.0.dn\"},1]},true,{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]}]},true]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0022",
       "r": "{\"Identifier\":\"VR-CZ-0022\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"3.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccination COVID-19 Vaccine Janssen must must be older than 14 days\"},{\"lang\":\"cs\",\"desc\":\"Od dokon\u010den\u00e9ho o\u010dkov\u00e1n\u00ed COVID-19 Vaccine Janssen mus\u00ed uplynout alespo\u0148 14 dn\u016f\"}],\"ValidFrom\":\"2021-12-15T23:00:00Z\",\"ValidTo\":\"2031-12-15T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"and\":[{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]}]},{\"if\":[{\">\":[{\"var\":\"payload.v.0.dn\"},1]},true,{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]}]},true]},true]}}"
-    },
-    {
-      "i": "VR-CZ-0033",
-      "r": "{\"Identifier\":\"VR-CZ-0033\",\"Type\":\"Acceptance\",\"Country\":\"CZ\",\"Version\":\"2.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine Comirnaty must have been completed.\"},{\"lang\":\"cs\",\"desc\":\"O\u010dkov\u00e1n\u00ed Comirnaty b\u00fdt dokon\u010den\u00e9.\"}],\"ValidFrom\":\"2021-11-21T23:00:00Z\",\"ValidTo\":\"2031-11-21T23:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1528\"]},{\">=\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},true]},true]}}"
     },
     {
       "i": "VR-CZ-0033",
