@@ -441,6 +441,10 @@
       "r": "{\"Identifier\":\"GR-FR-0000\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.4\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only test is allowed, and in a EU standard format.\"},{\"lang\":\"fr\",\"desc\":\"Seuls un test est autoris\u00e9, et dans un format au standard UE.\"}],\"ValidFrom\":\"2021-12-17T16:00:00Z\",\"ValidTo\":\"2031-12-17T16:00:00Z\",\"AffectedFields\":[\"v\",\"t\"],\"Logic\":{\"===\":[{\"reduce\":[[{\"var\":\"payload.v\"},{\"var\":\"payload.t\"}],{\"+\":[{\"var\":\"accumulator\"},{\"if\":[{\"var\":\"current.0\"},1,0]}]},0]},1]}}"
     },
     {
+      "i": "GR-FR-0000",
+      "r": "{\"Identifier\":\"GR-FR-0000\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.5\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Only a vaccine or test is allowed, and in a EU standard format.\"},{\"lang\":\"fr\",\"desc\":\"Seul un vaccin ou un test est autoris\u00e9, et dans un format au standard UE.\"}],\"ValidFrom\":\"2021-12-19T13:00:00Z\",\"ValidTo\":\"2031-12-19T13:00:00Z\",\"AffectedFields\":[\"v\",\"t\"],\"Logic\":{\"===\":[{\"reduce\":[[{\"var\":\"payload.v\"},{\"var\":\"payload.t\"}],{\"+\":[{\"var\":\"accumulator\"},{\"if\":[{\"var\":\"current.0\"},1,0]}]},0]},1]}}"
+    },
+    {
       "i": "VR-FR-0000",
       "r": "{\"Identifier\":\"VR-FR-0000\",\"Type\":\"Acceptance\",\"Country\":\"FR\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccin format is not EU standard.\"},{\"lang\":\"fr\",\"desc\":\"Le format li\u00e9 au vaccin n'est pas au standard UE.\"}],\"ValidFrom\":\"2021-12-11T00:00:00Z\",\"ValidTo\":\"2021-12-14T00:00:00Z\",\"AffectedFields\":[\"v.1\"],\"Logic\":{\"!\":[{\"var\":\"payload.v.1\"}]}}"
     },
@@ -746,7 +750,7 @@
     },
     {
       "i": "VR-ME-0003",
-      "r": "{\"Identifier\":\"VR-ME-0003\",\"Type\":\"Acceptance\",\"Country\":\"ME\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"sr\",\"desc\":\"Osobe koje su 180 dana od pozitivnog PCR testa primile bar jednu dozu vakcine.\"},{\"lang\":\"en\",\"desc\":\"For those who received at least one dose of vaccine 180 days after a positive PCR test.\"}],\"ValidFrom\":\"2021-12-15T13:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"and\":[{\"===\":[{\"var\":\"payload.v.0.sd\"},1]},{\">=\":[{\"var\":\"payload.v.0.dn\"},1]}]},true]}}"
+      "r": "{\"Identifier\":\"VR-ME-0003\",\"Type\":\"Acceptance\",\"Country\":\"ME\",\"Version\":\"1.0.1\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"sr\",\"desc\":\"Osobe koje su 180 dana od pozitivnog PCR testa primile bar jednu dozu vakcine.\"},{\"lang\":\"en\",\"desc\":\"For those who received at least one dose of vaccine 180 days after a positive PCR test.\"}],\"ValidFrom\":\"2021-12-19T16:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dn\",\"v.0.sd\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"===\":[{\"var\":\"payload.v.0.sd\"},1]},{\">=\":[{\"var\":\"payload.v.0.dn\"},1]},true]},true]}}"
     },
     {
       "i": "VR-ME-0002",
