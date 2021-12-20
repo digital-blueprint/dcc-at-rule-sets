@@ -34,10 +34,6 @@
     },
     {
       "i": "VR-ZZ-0003",
-      "r": "{\"Identifier\":\"VR-ZZ-0003\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine must have been administered at least 14 days ago.\"},{\"lang\":\"de\",\"desc\":\"Seit der Impfung m\u00fcssen mindestens 14 Tage vergangen sein.\"},{\"lang\":\"fr\",\"desc\":\"La vaccination doit dater de plus de 14 jours.\"}],\"ValidFrom\":\"2021-07-16T14:43:21+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"v.0\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]},true]}}"
-    },
-    {
-      "i": "VR-ZZ-0003",
       "r": "{\"Identifier\":\"VR-ZZ-0003\",\"Type\":\"Acceptance\",\"Country\":\"ZZ\",\"Version\":\"1.0.1\",\"SchemaVersion\":\"1.5.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"The vaccine must have been administered at least 14 days ago.\"},{\"lang\":\"de\",\"desc\":\"Seit der Impfung m\u00fcssen mindestens 14 Tage vergangen sein.\"},{\"lang\":\"fr\",\"desc\":\"La vaccination doit dater de plus de 14 jours.\"}],\"ValidFrom\":\"2021-12-20T00:00:00+02:00\",\"ValidTo\":\"2031-04-15T14:43:21+02:00\",\"AffectedFields\":[\"v.0\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]},true]}}"
     },
     {
