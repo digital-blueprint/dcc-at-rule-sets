@@ -1,0 +1,96 @@
+{
+    "AffectedFields": [
+        "v.0.mp",
+        "v.0.dt"
+    ],
+    "CertificateType": "Vaccination",
+    "Country": "AT",
+    "Description": [
+        {
+            "desc": "If (Vaccine == Johnson && dn >= sd && dn != 1) -> Verification Datetime must be less than 270 days after vaccination date",
+            "lang": "en"
+        }
+    ],
+    "Engine": "CERTLOGIC",
+    "EngineVersion": "0.7.5",
+    "Identifier": "VR-PHST-0007-booster",
+    "Logic": {
+        "if": [
+            {
+                "in": [
+                    {
+                        "var": "payload.v.0.mp"
+                    },
+                    [
+                        "EU/1/20/1525"
+                    ]
+                ]
+            },
+            {
+                "if": [
+                    {
+                        "and": [
+                            {
+                                ">=": [
+                                    {
+                                        "var": "payload.v.0.dn"
+                                    },
+                                    {
+                                        "var": "payload.v.0.sd"
+                                    }
+                                ]
+                            },
+                            {
+                                ">": [
+                                    {
+                                        "var": "payload.v.0.dn"
+                                    },
+                                    1
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "not-after": [
+                            {
+                                "plusTime": [
+                                    {
+                                        "var": "payload.v.0.dt"
+                                    },
+                                    0,
+                                    "day"
+                                ]
+                            },
+                            {
+                                "plusTime": [
+                                    {
+                                        "var": "external.validationClock"
+                                    },
+                                    0,
+                                    "day"
+                                ]
+                            },
+                            {
+                                "plusTime": [
+                                    {
+                                        "var": "payload.v.0.dt"
+                                    },
+                                    270,
+                                    "day"
+                                ]
+                            }
+                        ]
+                    },
+                    true
+                ]
+            },
+            true
+        ]
+    },
+    "Region": "ET",
+    "SchemaVersion": "1.0.0",
+    "Type": "Acceptance",
+    "ValidFrom": "2021-08-15T00:00:00Z",
+    "ValidTo": "2030-06-01T00:00:00Z",
+    "Version": "1.0.2"
+}

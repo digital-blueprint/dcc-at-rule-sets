@@ -1,0 +1,29 @@
+{
+    "AffectedFields": [
+        "t.1"
+    ],
+    "CertificateType": "Test",
+    "Country": "AT",
+    "Description": [
+        {
+            "desc": "At most one t-event.",
+            "lang": "en"
+        }
+    ],
+    "Engine": "CERTLOGIC",
+    "EngineVersion": "0.7.5",
+    "Identifier": "TR-PHST-0000",
+    "Logic": {
+        "!": [
+            {
+                "var": "payload.t.1"
+            }
+        ]
+    },
+    "Region": "ET",
+    "SchemaVersion": "1.0.0",
+    "Type": "Acceptance",
+    "ValidFrom": "2021-07-01T00:00:00Z",
+    "ValidTo": "2030-06-01T00:00:00Z",
+    "Version": "1.0.0"
+}

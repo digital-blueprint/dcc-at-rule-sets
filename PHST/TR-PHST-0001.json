@@ -1,0 +1,42 @@
+{
+    "AffectedFields": [
+        "t.0",
+        "t.0.tt"
+    ],
+    "CertificateType": "Test",
+    "Country": "AT",
+    "Description": [
+        {
+            "desc": "The test type must be one of the value set list (RAT OR NAA).",
+            "lang": "en"
+        }
+    ],
+    "Engine": "CERTLOGIC",
+    "EngineVersion": "0.7.5",
+    "Identifier": "TR-PHST-0001",
+    "Logic": {
+        "if": [
+            {
+                "var": "payload.t.0"
+            },
+            {
+                "in": [
+                    {
+                        "var": "payload.t.0.tt"
+                    },
+                    [
+                        "LP217198-3",
+                        "LP6464-4"
+                    ]
+                ]
+            },
+            true
+        ]
+    },
+    "Region": "ET",
+    "SchemaVersion": "1.0.0",
+    "Type": "Acceptance",
+    "ValidFrom": "2021-07-01T00:00:00Z",
+    "ValidTo": "2030-06-01T00:00:00Z",
+    "Version": "1.0.0"
+}

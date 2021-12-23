@@ -7,6 +7,7 @@ Maintained sets:
 
 * **TUGRAZ:** The rules for accessing a building of the "TU Graz"
 * **PLUS**: The rules for accessing a building of the "Paris Lodron University of Salzburg"
+* **PHST**: The rules for accessing a building of the "Pädagogische Hochschule Steiermark"
 
 Mirrored sets:
 
