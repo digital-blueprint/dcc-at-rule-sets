@@ -14,7 +14,7 @@ def main(argv):
     for name in ["TUGRAZ", "PLUS", "PHST"]:
         source = os.path.join(DIR, name)
         rules = []
-        for path in sorted(glob.glob(source + "/*.json")):
+        for path in sorted(glob.glob(source + "/**/*.json", recursive=True)):
             with open(path, "rb") as h:
                 decoded = json.loads(h.read())
                 rules.append({
