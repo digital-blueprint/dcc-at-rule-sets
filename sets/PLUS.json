@@ -41,6 +41,10 @@
       "r": "{\"AffectedFields\": [\"t.0.sc\", \"t.0.tt\"], \"CertificateType\": \"Test\", \"Country\": \"AT\", \"Description\": [{\"desc\": \"DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test).\", \"lang\": \"en\"}], \"Engine\": \"CERTLOGIC\", \"EngineVersion\": \"0.7.5\", \"Identifier\": \"TR-PLUS-0006\", \"Logic\": {\"if\": [{\"===\": [{\"var\": \"payload.t.0.tt\"}, \"LP6464-4\"]}, {\"before\": [{\"plusTime\": [{\"var\": \"external.validationClock\"}, 0, \"day\"]}, {\"plusTime\": [{\"var\": \"payload.t.0.sc\"}, 72, \"hour\"]}]}, true]}, \"Region\": \"ET\", \"SchemaVersion\": \"1.0.0\", \"Type\": \"Acceptance\", \"ValidFrom\": \"2021-07-01T00:00:00Z\", \"ValidTo\": \"2030-06-01T00:00:00Z\", \"Version\": \"1.0.0\"}"
     },
     {
+      "i": "TR-PLUS-0007",
+      "r": "{\"AffectedFields\": [\"t.0\", \"t.0.tt\"], \"CertificateType\": \"Test\", \"Country\": \"AT\", \"Description\": [{\"desc\": \"The test type must be one of the value set list (NAA).\", \"lang\": \"en\"}], \"Engine\": \"CERTLOGIC\", \"EngineVersion\": \"0.7.5\", \"Identifier\": \"TR-PLUS-0007\", \"Logic\": {\"if\": [{\"var\": \"payload.t.0\"}, {\"in\": [{\"var\": \"payload.t.0.tt\"}, [\"LP6464-4\"]]}, true]}, \"Region\": \"ET\", \"SchemaVersion\": \"1.0.0\", \"Type\": \"Acceptance\", \"ValidFrom\": \"2022-01-09T23:00:00Z\", \"ValidTo\": \"2030-06-01T00:00:00Z\", \"Version\": \"1.0.0\"}"
+    },
+    {
       "i": "VR-PLUS-0000",
       "r": "{\"AffectedFields\": [\"v.1\"], \"CertificateType\": \"Vaccination\", \"Country\": \"AT\", \"Description\": [{\"desc\": \"At most one v-event.\", \"lang\": \"en\"}], \"Engine\": \"CERTLOGIC\", \"EngineVersion\": \"0.7.5\", \"Identifier\": \"VR-PLUS-0000\", \"Logic\": {\"!\": [{\"var\": \"payload.v.1\"}]}, \"Region\": \"ET\", \"SchemaVersion\": \"1.0.0\", \"Type\": \"Acceptance\", \"ValidFrom\": \"2021-07-01T00:00:00Z\", \"ValidTo\": \"2030-06-01T00:00:00Z\", \"Version\": \"1.0.0\"}"
     },
