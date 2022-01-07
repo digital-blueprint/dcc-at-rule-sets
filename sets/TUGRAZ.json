@@ -1,6 +1,26 @@
 {
   "r": [
     {
+      "i": "TUGRAZ-ET-LV-GR-0000",
+      "r": "{\"AffectedFields\": [\"t\"], \"CertificateType\": \"General\", \"Country\": \"AT\", \"Description\": [{\"desc\": \"Exactly one type of event: Test\", \"lang\": \"en\"}, {\"desc\": \"Genau ein Event-Typ vorhanden: Test\", \"lang\": \"de\"}], \"Engine\": \"CERTLOGIC\", \"EngineVersion\": \"0.7.5\", \"Identifier\": \"TUGRAZ-ET-LV-GR-0000\", \"Logic\": {\"===\": [{\"reduce\": [[{\"var\": \"payload.t\"}], {\"+\": [{\"var\": \"accumulator\"}, {\"if\": [{\"var\": \"current.0\"}, 1, 0]}]}, 0]}, 1]}, \"Region\": \"ET-LV\", \"SchemaVersion\": \"1.0.0\", \"Type\": \"Acceptance\", \"ValidFrom\": \"2021-07-01T00:00:00Z\", \"ValidTo\": \"2030-06-01T00:00:00Z\", \"Version\": \"1.0.0\"}"
+    },
+    {
+      "i": "TUGRAZ-ET-LV-GR-0001",
+      "r": "{\"AffectedFields\": [\"r.0\", \"r.0.tg\", \"t.0\", \"t.0.tg\", \"v.0\", \"v.0.tg\"], \"CertificateType\": \"General\", \"Country\": \"AT\", \"Description\": [{\"desc\": \"The \\\"disease or agent targeted\\\" must be COVID-19 of the value set list.\", \"lang\": \"en\"}], \"Engine\": \"CERTLOGIC\", \"EngineVersion\": \"0.7.5\", \"Identifier\": \"TUGRAZ-ET-LV-GR-0001\", \"Logic\": {\"and\": [{\"if\": [{\"var\": \"payload.r.0\"}, {\"in\": [{\"var\": \"payload.r.0.tg\"}, {\"var\": \"external.valueSets.disease-agent-targeted\"}]}, true]}, {\"if\": [{\"var\": \"payload.t.0\"}, {\"in\": [{\"var\": \"payload.t.0.tg\"}, {\"var\": \"external.valueSets.disease-agent-targeted\"}]}, true]}, {\"if\": [{\"var\": \"payload.v.0\"}, {\"in\": [{\"var\": \"payload.v.0.tg\"}, {\"var\": \"external.valueSets.disease-agent-targeted\"}]}, true]}]}, \"Region\": \"ET-LV\", \"SchemaVersion\": \"1.0.0\", \"Type\": \"Acceptance\", \"ValidFrom\": \"2021-07-01T00:00:00Z\", \"ValidTo\": \"2030-06-01T00:00:00Z\", \"Version\": \"1.0.0\"}"
+    },
+    {
+      "i": "TUGRAZ-ET-LV-TR-0001",
+      "r": "{\"AffectedFields\": [\"t.0\", \"t.0.tt\"], \"CertificateType\": \"Test\", \"Country\": \"AT\", \"Description\": [{\"desc\": \"The test type must be one of the value set list (NAA).\", \"lang\": \"en\"}], \"Engine\": \"CERTLOGIC\", \"EngineVersion\": \"0.7.5\", \"Identifier\": \"TUGRAZ-ET-LV-TR-0001\", \"Logic\": {\"if\": [{\"var\": \"payload.t.0\"}, {\"in\": [{\"var\": \"payload.t.0.tt\"}, [\"LP6464-4\"]]}, true]}, \"Region\": \"ET-LV\", \"SchemaVersion\": \"1.0.0\", \"Type\": \"Acceptance\", \"ValidFrom\": \"2021-11-08T00:00:00Z\", \"ValidTo\": \"2030-06-01T00:00:00Z\", \"Version\": \"1.0.0\"}"
+    },
+    {
+      "i": "TUGRAZ-ET-LV-TR-0004",
+      "r": "{\"AffectedFields\": [\"t.0\", \"t.0.tr\"], \"CertificateType\": \"Test\", \"Country\": \"AT\", \"Description\": [{\"desc\": \"Test result must be negative (\\\"not detected\\\").\", \"lang\": \"en\"}], \"Engine\": \"CERTLOGIC\", \"EngineVersion\": \"0.7.5\", \"Identifier\": \"TUGRAZ-ET-LV-TR-0004\", \"Logic\": {\"if\": [{\"var\": \"payload.t.0\"}, {\"===\": [{\"var\": \"payload.t.0.tr\"}, \"260415000\"]}, true]}, \"Region\": \"ET-LV\", \"SchemaVersion\": \"1.0.0\", \"Type\": \"Acceptance\", \"ValidFrom\": \"2021-07-01T00:00:00Z\", \"ValidTo\": \"2030-06-01T00:00:00Z\", \"Version\": \"1.0.0\"}"
+    },
+    {
+      "i": "TUGRAZ-ET-LV-TR-0006",
+      "r": "{\"AffectedFields\": [\"t.0.sc\", \"t.0.tt\"], \"CertificateType\": \"Test\", \"Country\": \"AT\", \"Description\": [{\"desc\": \"DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test).\", \"lang\": \"en\"}], \"Engine\": \"CERTLOGIC\", \"EngineVersion\": \"0.7.5\", \"Identifier\": \"TUGRAZ-ET-LV-TR-0006\", \"Logic\": {\"if\": [{\"===\": [{\"var\": \"payload.t.0.tt\"}, \"LP6464-4\"]}, {\"before\": [{\"plusTime\": [{\"var\": \"external.validationClock\"}, 0, \"day\"]}, {\"plusTime\": [{\"var\": \"payload.t.0.sc\"}, 72, \"hour\"]}]}, true]}, \"Region\": \"ET-LV\", \"SchemaVersion\": \"1.0.0\", \"Type\": \"Acceptance\", \"ValidFrom\": \"2021-07-01T00:00:00Z\", \"ValidTo\": \"2030-06-01T00:00:00Z\", \"Version\": \"1.0.0\"}"
+    },
+    {
       "i": "GR-TUGRAZ-0000",
       "r": "{\"AffectedFields\": [\"r\", \"t\", \"v\"], \"CertificateType\": \"General\", \"Country\": \"AT\", \"Description\": [{\"desc\": \"Exactly one type of event.\", \"lang\": \"en\"}, {\"desc\": \"Genau ein Event-Typ vorhanden.\", \"lang\": \"de\"}], \"Engine\": \"CERTLOGIC\", \"EngineVersion\": \"0.7.5\", \"Identifier\": \"GR-TUGRAZ-0000\", \"Logic\": {\"===\": [{\"reduce\": [[{\"var\": \"payload.r\"}, {\"var\": \"payload.t\"}, {\"var\": \"payload.v\"}], {\"+\": [{\"var\": \"accumulator\"}, {\"if\": [{\"var\": \"current.0\"}, 1, 0]}]}, 0]}, 1]}, \"Region\": \"ET\", \"SchemaVersion\": \"1.0.0\", \"Type\": \"Acceptance\", \"ValidFrom\": \"2021-07-01T00:00:00Z\", \"ValidTo\": \"2030-06-01T00:00:00Z\", \"Version\": \"1.0.0\"}"
     },
