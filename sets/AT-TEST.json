@@ -754,6 +754,10 @@
     },
     {
       "i": "VR-EE-0003",
+      "r": "{\"Identifier\":\"VR-EE-0003\",\"Type\":\"Acceptance\",\"Country\":\"EE\",\"Version\":\"1.0.5\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Verification Datetime must be less than 270 days after the last date of full vaccination.\"},{\"lang\":\"ee\",\"desc\":\"T\u00e4isvaktsineeritusest ei tohi olla m\u00f6\u00f6das rohkem kui 270 p\u00e4eva.\"}],\"ValidFrom\":\"2022-01-24T00:00:00Z\",\"ValidTo\":\"2023-02-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\",\"v.0.sd\",\"v.0.dn\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"and\":[{\"===\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"<=\":[{\"var\":\"payload.v.0.dn\"},2]}]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},270,\"day\"]}]},true]},true]}}"
+    },
+    {
+      "i": "VR-EE-0003",
       "r": "{\"Identifier\":\"VR-EE-0003\",\"Type\":\"Acceptance\",\"Country\":\"EE\",\"Version\":\"1.0.2\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Verification Datetime must be less than 365 days after the last date of vaccination.\"},{\"lang\":\"ee\",\"desc\":\"Vaktsineerimisest ei tohi olla m\u00f6\u00f6das rohkem kui 365 p\u00e4eva\"}],\"ValidFrom\":\"2021-09-06T00:00:00Z\",\"ValidTo\":\"2022-09-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.dt\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},365,\"day\"]}]},true]}}"
     },
     {
