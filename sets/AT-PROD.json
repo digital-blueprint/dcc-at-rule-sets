@@ -962,10 +962,6 @@
     },
     {
       "i": "VR-IE-0003",
-      "r": "{\"Identifier\":\"VR-IE-0003\",\"Type\":\"Acceptance\",\"Country\":\"IE\",\"Version\":\"1.0.3\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccine certificate is invalid for entry at this time as the date is outside the window.\"}],\"ValidFrom\":\"2022-01-07T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"and\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1528\"]},{\"<=\":[{\"var\":\"payload.v.0.dn\"},2]}]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},7,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[\"2022-06-30T23:59:59-00:00\",0,\"day\"]}]},true]},true]}}"
-    },
-    {
-      "i": "VR-IE-0003",
       "r": "{\"Identifier\":\"VR-IE-0003\",\"Type\":\"Acceptance\",\"Country\":\"IE\",\"Version\":\"1.0.4\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Effective dates on vaccine certificate not valid for entry at this time.\"}],\"ValidFrom\":\"2022-02-04T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"and\":[{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\",\"CoronaVac\",\"BBIBP-CorV\",\"Covishield\",\"Covaxin\",\"EU/1/21/1618\",\"NVX-CoV2373\"]]},{\"<=\":[{\"var\":\"payload.v.0.dn\"},2]}]},{\"and\":[{\"not-before\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]}]},{\"not-after\":[{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},270,\"day\"]}]}]},true]},true]}}"
     },
     {
@@ -974,23 +970,11 @@
     },
     {
       "i": "VR-IE-0011",
-      "r": "{\"Identifier\":\"VR-IE-0011\",\"Type\":\"Acceptance\",\"Country\":\"IE\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Effective dates on vaccine certificate not valid for entry at this time.\"}],\"ValidFrom\":\"2022-01-07T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\">\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[\"2022-06-30T23:59:59-00:00\",0,\"day\"]}]},true]},true]}}"
-    },
-    {
-      "i": "VR-IE-0011",
       "r": "{\"Identifier\":\"VR-IE-0011\",\"Type\":\"Acceptance\",\"Country\":\"IE\",\"Version\":\"1.0.1\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Effective dates on vaccine certificate not valid for entry at this time.\"}],\"ValidFrom\":\"2022-02-04T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\">\":[{\"var\":\"payload.v.0.dn\"},{\"var\":\"payload.v.0.sd\"}]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[\"2030-06-30T23:59:59-00:00\",0,\"day\"]}]},true]},true]}}"
     },
     {
       "i": "VR-IE-0001",
-      "r": "{\"Identifier\":\"VR-IE-0001\",\"Type\":\"Acceptance\",\"Country\":\"IE\",\"Version\":\"1.0.4\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Unapproved Vaccine listed in Vaccine Certificate\"}],\"ValidFrom\":\"2021-12-21T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\",\"EU/1/20/1525\",\"CoronaVac\",\"BBIBP-CorV\",\"Covishield\",\"Covaxin\"]]},true]}}"
-    },
-    {
-      "i": "VR-IE-0001",
       "r": "{\"Identifier\":\"VR-IE-0001\",\"Type\":\"Acceptance\",\"Country\":\"IE\",\"Version\":\"1.0.5\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Unapproved Vaccine listed in Vaccine Certificate\"}],\"ValidFrom\":\"2022-02-04T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\",\"v.0.mp\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.mp\"},[\"EU/1/20/1528\",\"EU/1/20/1507\",\"EU/1/21/1529\",\"EU/1/20/1525\",\"CoronaVac\",\"BBIBP-CorV\",\"Covishield\",\"Covaxin\",\"EU/1/21/1618\",\"NVX-CoV2373\"]]},true]}}"
-    },
-    {
-      "i": "VR-IE-0012",
-      "r": "{\"Identifier\":\"VR-IE-0012\",\"Type\":\"Acceptance\",\"Country\":\"IE\",\"Version\":\"1.0.0\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Effective dates on vaccine certificate not valid for entry at this time.\"}],\"ValidFrom\":\"2022-01-07T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\">\":[{\"var\":\"payload.v.0.dn\"},2]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},0,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[\"2022-06-30T23:59:59-00:00\",0,\"day\"]}]},true]},true]}}"
     },
     {
       "i": "VR-IE-0012",
@@ -999,10 +983,6 @@
     {
       "i": "GR-IE-0001",
       "r": "{\"Identifier\":\"GR-IE-0001\",\"Type\":\"Acceptance\",\"Country\":\"IE\",\"Version\":\"1.0.1\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"General\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Certificate relates to a disease other than COVID-19.\"}],\"ValidFrom\":\"2021-07-12T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"r.0\",\"r.0.tg\",\"t.0\",\"t.0.tg\",\"v.0\",\"v.0.tg\"],\"Logic\":{\"and\":[{\"if\":[{\"var\":\"payload.r.0\"},{\"in\":[{\"var\":\"payload.r.0.tg\"},{\"var\":\"external.valueSets.disease-agent-targeted\"}]},true]},{\"if\":[{\"var\":\"payload.t.0\"},{\"in\":[{\"var\":\"payload.t.0.tg\"},{\"var\":\"external.valueSets.disease-agent-targeted\"}]},true]},{\"if\":[{\"var\":\"payload.v.0\"},{\"in\":[{\"var\":\"payload.v.0.tg\"},{\"var\":\"external.valueSets.disease-agent-targeted\"}]},true]}]}}"
-    },
-    {
-      "i": "VR-IE-0006",
-      "r": "{\"Identifier\":\"VR-IE-0006\",\"Type\":\"Acceptance\",\"Country\":\"IE\",\"Version\":\"1.0.4\",\"SchemaVersion\":\"1.0.0\",\"Engine\":\"CERTLOGIC\",\"EngineVersion\":\"0.7.5\",\"CertificateType\":\"Vaccination\",\"Description\":[{\"lang\":\"en\",\"desc\":\"Vaccine certificate is invalid for entry at this time as the date is outside the window.\"}],\"ValidFrom\":\"2022-01-07T00:00:00Z\",\"ValidTo\":\"2030-06-01T00:00:00Z\",\"AffectedFields\":[\"v.0\"],\"Logic\":{\"if\":[{\"var\":\"payload.v.0\"},{\"if\":[{\"and\":[{\"===\":[{\"var\":\"payload.v.0.mp\"},\"EU/1/20/1525\"]},{\"<=\":[{\"var\":\"payload.v.0.dn\"},1]}]},{\"not-after\":[{\"plusTime\":[{\"var\":\"payload.v.0.dt\"},14,\"day\"]},{\"plusTime\":[{\"var\":\"external.validationClock\"},0,\"day\"]},{\"plusTime\":[\"2022-06-30T23:59:59-00:00\",0,\"day\"]}]},true]},true]}}"
     },
     {
       "i": "VR-IE-0006",
