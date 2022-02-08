@@ -5,9 +5,9 @@ rule sets that are applicable in Austria.
 
 Maintained sets:
 
-* **TUGRAZ:** The rules for accessing a building of the "TU Graz". [See details](./rulesets/TUGRAZ/README.md)
-* **PLUS**: The rules for accessing a building of the "Paris Lodron University of Salzburg". [See details](./rulesets/PLUS/README.md)
-* **PHST**: The rules for accessing a building of the "Pädagogische Hochschule Steiermark". [See details](./rulesets/PHST/README.md)
+* **TUGRAZ:** The rules for "TU Graz". [See details](./rulesets/TUGRAZ/README.md)
+* **PLUS**: The rules for "Paris Lodron University of Salzburg". [See details](./rulesets/PLUS/README.md)
+* **PHST**: The rules for "Pädagogische Hochschule Steiermark". [See details](./rulesets/PHST/README.md)
 
 Mirrored sets:
 
