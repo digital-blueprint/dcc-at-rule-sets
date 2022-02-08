@@ -24,9 +24,8 @@ jobs:
 
       - name: Build
         run: |
-          python3 -m poetry run ./build.py ./dir/sets
-          python3 -m poetry run ./import.py import-full ./dir/sets
-          cp index.html ./dir/
+          python3 -m poetry run ./make.py import-at
+          python3 -m poetry run ./make.py build ./dir
 
       - name: Upload Results
         uses: actions/upload-artifact@v2

@@ -2,6 +2,7 @@
 
 import argparse
 import os
+import glob
 import json
 from datetime import datetime, timezone
 
@@ -94,36 +95,66 @@ async def fetch_austria_data_and_verify(test: bool, thing: str):
     return cbor2.loads(content)
 
 
+async def do_build(args):
+    import jinja2
+
+    target = os.path.abspath(args.target)
+
+    rulesets = os.path.join(DIR, "rulesets")
+    sets = os.path.join(target, "sets")
+    names = []
+    for name in os.listdir(rulesets):
+        names.append(name)
+        source = os.path.join(rulesets, name)
+        rules = []
+        for path in sorted(glob.glob(source + "/**/*.json", recursive=True)):
+            with open(path, "rb") as h:
+                decoded = json.loads(h.read())
+                rules.append({
+                    "i": decoded["Identifier"],
+                    "r": json.dumps(decoded),
+                })
+        os.makedirs(sets, exist_ok=True)
+        with open(os.path.join(sets, name + ".json"), "w", encoding="utf-8") as h:
+            h.write(json.dumps({"r": rules}, indent=2))
+
+    with open("index.tmpl", "r", encoding="utf-8") as h:
+        with open(os.path.join(target, "index.html"), "w", encoding="utf-8") as h2:
+            tmpl = jinja2.Template(h.read())
+            h2.write(tmpl.render(names=sorted(names)))
+
+
+async def do_format(args):
+    rulesets = os.path.join(DIR, "rulesets")
+    for name in os.listdir(rulesets):
+        source = os.path.join(rulesets, name)
+        for path in sorted(glob.glob(source + "/**/*.json", recursive=True)):
+            with open(path, "rb") as h:
+                sorted_rules = json.dumps(json.loads(h.read()), sort_keys=True, indent=4)
+            with open(path, "w", encoding="utf-8") as h:
+                h.write(sorted_rules)
+
+
 async def import_at(args):
-    target = os.path.join(DIR, "rulesets", "AT-PROD")
-    os.makedirs(target, exist_ok=True)
+    for is_test, name in [(True, "AT-TEST"), (False, "AT-PROD")]:
+        target = os.path.join(DIR, "rulesets", name)
+        os.makedirs(target, exist_ok=True)
 
-    prod_rules = await fetch_austria_data_and_verify(False, "rules")
-    for entry in prod_rules["r"]:
-        decoded = json.loads(entry["r"])
-        if decoded["Country"] != "AT":
-            continue
-        sub = os.path.join(target, decoded["Region"])
-        os.makedirs(sub, exist_ok=True)
-        json_target = os.path.join(sub, decoded["Identifier"] + ".json")
-        assert not os.path.exists(json_target)
-        with open(json_target, "w", encoding="utf-8") as h:
-            h.write(json.dumps(decoded, sort_keys=True, indent=4))
-
-
-async def import_full(args):
-    target = args.target
-    os.makedirs(target, exist_ok=True)
-    test_rules = await fetch_austria_data_and_verify(True, "rules")
-    with open(os.path.join(target, "AT-TEST.json"), "w", encoding="utf-8") as h:
-        h.write(json.dumps(test_rules, indent=2))
-    prod_rules = await fetch_austria_data_and_verify(False, "rules")
-    with open(os.path.join(target, "AT-PROD.json"), "w", encoding="utf-8") as h:
-        h.write(json.dumps(prod_rules, indent=2))
+        prod_rules = await fetch_austria_data_and_verify(is_test, "rules")
+        for entry in prod_rules["r"]:
+            decoded = json.loads(entry["r"])
+            if decoded["Country"] != "AT":
+                continue
+            sub = os.path.join(target, decoded["Region"])
+            os.makedirs(sub, exist_ok=True)
+            json_target = os.path.join(sub, decoded["Identifier"] + ".json")
+            assert not os.path.exists(json_target)
+            with open(json_target, "w", encoding="utf-8") as h:
+                h.write(json.dumps(decoded, sort_keys=True, indent=4))
 
 
 def main(argv):
-    parser = argparse.ArgumentParser(description="Import official rules", allow_abbrev=False)
+    parser = argparse.ArgumentParser(description="Manage rule sets", allow_abbrev=False)
 
     async def show_help(*x):
         parser.print_help()
@@ -131,12 +162,15 @@ def main(argv):
     parser.set_defaults(func=show_help)
     subparser = parser.add_subparsers(title="subcommands")
 
-    sub = subparser.add_parser("import-full")
-    sub.add_argument("target")
-    sub.set_defaults(func=import_full)
-
     sub = subparser.add_parser("import-at")
     sub.set_defaults(func=import_at)
+
+    sub = subparser.add_parser("format")
+    sub.set_defaults(func=do_format)
+
+    sub = subparser.add_parser("build")
+    sub.add_argument("target")
+    sub.set_defaults(func=do_build)
 
     args = parser.parse_args(argv[1:])
     asyncio.run(args.func(args))

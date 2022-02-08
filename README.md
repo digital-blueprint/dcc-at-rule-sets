@@ -11,8 +11,8 @@ Maintained sets:
 
 Mirrored sets:
 
-* **AT-PROD:** https://dgc-trust.qr.gv.at/trustlist
-* **AT-TEST:** https://dgc-trusttest.qr.gv.at/trustlist
+* **AT-PROD:** https://dgc-trust.qr.gv.at/trustlist (only rules for AT)
+* **AT-TEST:** https://dgc-trusttest.qr.gv.at/trustlist (only rules for AT)
 
 The format of the specific rules follows the official EU-DCC standard as
 described here:
