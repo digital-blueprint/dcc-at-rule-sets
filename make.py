@@ -4,6 +4,7 @@ import argparse
 import os
 import glob
 import json
+import shutil
 from datetime import datetime, timezone
 
 DIR = os.path.dirname(os.path.realpath(__file__))
@@ -138,6 +139,7 @@ async def do_format(args):
 async def import_at(args):
     for is_test, name in [(True, "AT-TEST"), (False, "AT-PROD")]:
         target = os.path.join(DIR, "rulesets", name)
+        shutil.rmtree(target, ignore_errors=True)
         os.makedirs(target, exist_ok=True)
 
         prod_rules = await fetch_austria_data_and_verify(is_test, "rules")
