@@ -131,7 +131,8 @@ async def do_format(args):
         source = os.path.join(rulesets, name)
         for path in sorted(glob.glob(source + "/**/*.json", recursive=True)):
             with open(path, "rb") as h:
-                sorted_rules = json.dumps(json.loads(h.read()), sort_keys=True, indent=4)
+                sorted_rules = json.dumps(
+                    json.loads(h.read()), sort_keys=True, indent=4, ensure_ascii=False)
             with open(path, "w", encoding="utf-8") as h:
                 h.write(sorted_rules)
 
@@ -152,7 +153,7 @@ async def import_at(args):
             json_target = os.path.join(sub, decoded["Identifier"] + ".json")
             assert not os.path.exists(json_target)
             with open(json_target, "w", encoding="utf-8") as h:
-                h.write(json.dumps(decoded, sort_keys=True, indent=4))
+                h.write(json.dumps(decoded, sort_keys=True, indent=4, ensure_ascii=False))
 
 
 def main(argv):
