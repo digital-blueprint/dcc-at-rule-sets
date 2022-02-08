@@ -10,8 +10,6 @@ on:
 
 jobs:
   build:
-    permissions:
-      contents: write
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
@@ -29,6 +27,26 @@ jobs:
           python3 -m poetry run ./build.py ./dir/sets
           python3 -m poetry run ./import.py ./dir/sets
           cp index.html ./dir/
+
+      - name: Upload Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: website
+          path: ./dir
+
+  deploy:
+    permissions:
+      contents: write
+    runs-on: ubuntu-20.04
+    needs: build
+    concurrency: ci-${{ github.ref }}
+    if: (github.event_name != 'pull_request' && github.ref == 'refs/heads/source')
+    steps:
+      - name: Download Results
+        uses: actions/download-artifact@v2
+        with:
+          name: website
+          path: ./dir
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
