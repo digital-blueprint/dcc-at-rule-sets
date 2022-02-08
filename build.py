@@ -11,8 +11,9 @@ DIR = os.path.dirname(os.path.realpath(__file__))
 def main(argv):
     target = os.path.abspath(argv[1])
 
-    for name in ["TUGRAZ", "PLUS", "PHST"]:
-        source = os.path.join(DIR, name)
+    rulesets = os.path.join(DIR, "rulesets")
+    for name in os.listdir(rulesets):
+        source = os.path.join(rulesets, name)
         rules = []
         for path in sorted(glob.glob(source + "/**/*.json", recursive=True)):
             with open(path, "rb") as h:
