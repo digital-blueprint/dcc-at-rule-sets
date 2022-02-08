@@ -143,7 +143,7 @@ async def import_at(args):
         prod_rules = await fetch_austria_data_and_verify(is_test, "rules")
         for entry in prod_rules["r"]:
             decoded = json.loads(entry["r"])
-            if decoded["Country"] != "AT":
+            if decoded["Country"] != "AT" or decoded["Engine"] != "CERTLOGIC":
                 continue
             sub = os.path.join(target, decoded["Region"])
             os.makedirs(sub, exist_ok=True)
