@@ -162,13 +162,13 @@ def main(argv):
     parser.set_defaults(func=show_help)
     subparser = parser.add_subparsers(title="subcommands")
 
-    sub = subparser.add_parser("import-at")
+    sub = subparser.add_parser("import-at", help="Import the official Austria rule sets")
     sub.set_defaults(func=import_at)
 
-    sub = subparser.add_parser("format")
+    sub = subparser.add_parser("format", help="Re-format/sort all JSON rule sets")
     sub.set_defaults(func=do_format)
 
-    sub = subparser.add_parser("build")
+    sub = subparser.add_parser("build", help="Build the web directory")
     sub.add_argument("target")
     sub.set_defaults(func=do_build)
 
