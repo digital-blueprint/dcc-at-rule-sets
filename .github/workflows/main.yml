@@ -25,7 +25,7 @@ jobs:
       - name: Build
         run: |
           python3 -m poetry run ./build.py ./dir/sets
-          python3 -m poetry run ./import.py ./dir/sets
+          python3 -m poetry run ./import.py import-full ./dir/sets
           cp index.html ./dir/
 
       - name: Upload Results

@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
+import argparse
 import os
 import json
 from datetime import datetime, timezone
 
+DIR = os.path.dirname(os.path.realpath(__file__))
 NOW = datetime.now(timezone.utc)
 
 AUSTRIA_API_CERT_PROD = b"""\
@@ -92,8 +94,25 @@ async def fetch_austria_data_and_verify(test: bool, thing: str):
     return cbor2.loads(content)
 
 
-async def main(argv):
-    target = os.path.abspath(argv[1])
+async def import_at(args):
+    target = os.path.join(DIR, "rulesets", "AT-PROD")
+    os.makedirs(target, exist_ok=True)
+
+    prod_rules = await fetch_austria_data_and_verify(False, "rules")
+    for entry in prod_rules["r"]:
+        decoded = json.loads(entry["r"])
+        if decoded["Country"] != "AT":
+            continue
+        sub = os.path.join(target, decoded["Region"])
+        os.makedirs(sub, exist_ok=True)
+        json_target = os.path.join(sub, decoded["Identifier"] + ".json")
+        assert not os.path.exists(json_target)
+        with open(json_target, "w", encoding="utf-8") as h:
+            h.write(json.dumps(decoded, sort_keys=True, indent=4))
+
+
+async def import_full(args):
+    target = args.target
     os.makedirs(target, exist_ok=True)
     test_rules = await fetch_austria_data_and_verify(True, "rules")
     with open(os.path.join(target, "AT-TEST.json"), "w", encoding="utf-8") as h:
@@ -103,7 +122,27 @@ async def main(argv):
         h.write(json.dumps(prod_rules, indent=2))
 
 
+def main(argv):
+    parser = argparse.ArgumentParser(description="Import official rules", allow_abbrev=False)
+
+    async def show_help(*x):
+        parser.print_help()
+
+    parser.set_defaults(func=show_help)
+    subparser = parser.add_subparsers(title="subcommands")
+
+    sub = subparser.add_parser("import-full")
+    sub.add_argument("target")
+    sub.set_defaults(func=import_full)
+
+    sub = subparser.add_parser("import-at")
+    sub.set_defaults(func=import_at)
+
+    args = parser.parse_args(argv[1:])
+    asyncio.run(args.func(args))
+
+
 if __name__ == "__main__":
     import asyncio
     import sys
-    asyncio.run(main(sys.argv))
+    main(sys.argv)
