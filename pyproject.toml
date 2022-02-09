@@ -6,7 +6,7 @@ authors = ["Christoph Reiter <reiter.christoph@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-httpx = "^0.20.0"
+httpx = "^0.22.0"
 cose = "^0.9.dev8"
 Jinja2 = "^3.0.3"
 
