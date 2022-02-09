@@ -1,22 +1,22 @@
 {
     "AffectedFields": [
-        "v.1"
+        "r.1"
     ],
-    "CertificateType": "Vaccination",
+    "CertificateType": "Recovery",
     "Country": "AT",
     "Description": [
         {
-            "desc": "At most one v-event.",
+            "desc": "At most one r-event.",
             "lang": "en"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "VR-TUGRAZ-0000",
+    "Identifier": "RR-AT-0000",
     "Logic": {
         "!": [
             {
-                "var": "payload.v.1"
+                "var": "payload.r.1"
             }
         ]
     },
@@ -25,5 +25,5 @@
     "Type": "Acceptance",
     "ValidFrom": "2021-07-01T00:00:00Z",
     "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.0"
+    "Version": "1.0.12"
 }

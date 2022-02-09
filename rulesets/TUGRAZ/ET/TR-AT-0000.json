@@ -1,29 +1,29 @@
 {
     "AffectedFields": [
-        "r.1"
+        "t.1"
     ],
-    "CertificateType": "Recovery",
+    "CertificateType": "Test",
     "Country": "AT",
     "Description": [
         {
-            "desc": "At most one r-event.",
+            "desc": "At most one t-event.",
             "lang": "en"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "RR-TUGRAZ-0000",
+    "Identifier": "TR-AT-0000",
     "Logic": {
         "!": [
             {
-                "var": "payload.r.1"
+                "var": "payload.t.1"
             }
         ]
     },
     "Region": "ET",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
-    "ValidFrom": "2021-07-01T00:00:00Z",
+    "ValidFrom": "2021-12-09T00:00:00Z",
     "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.0"
+    "Version": "1.0.12"
 }
