@@ -1,30 +1,32 @@
 {
     "AffectedFields": [
         "t.0",
-        "t.0.tr"
+        "t.0.tt"
     ],
     "CertificateType": "Test",
     "Country": "AT",
     "Description": [
         {
-            "desc": "Test result must be negative (\"not detected\").",
+            "desc": "The test type must be NAA (PCR). RAT no longer allowed.",
             "lang": "en"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "TR-PLUS-0004",
+    "Identifier": "TR-AT-0001",
     "Logic": {
         "if": [
             {
                 "var": "payload.t.0"
             },
             {
-                "===": [
+                "in": [
                     {
-                        "var": "payload.t.0.tr"
+                        "var": "payload.t.0.tt"
                     },
-                    "260415000"
+                    [
+                        "LP6464-4"
+                    ]
                 ]
             },
             true
@@ -33,7 +35,7 @@
     "Region": "ET",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
-    "ValidFrom": "2021-07-01T00:00:00Z",
+    "ValidFrom": "2021-12-09T00:00:00Z",
     "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.0"
+    "Version": "1.0.12"
 }

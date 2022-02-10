@@ -17,7 +17,7 @@
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "GR-PLUS-0001",
+    "Identifier": "GR-AT-0001",
     "Logic": {
         "and": [
             {
@@ -79,7 +79,7 @@
     "Region": "ET",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
-    "ValidFrom": "2021-07-01T00:00:00Z",
+    "ValidFrom": "2021-12-09T00:00:00Z",
     "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.0"
+    "Version": "1.0.12"
 }

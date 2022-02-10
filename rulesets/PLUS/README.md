@@ -6,4 +6,4 @@ Country:
 * always "AT"
 
 Region:
-* "ET": Entry test
+* "ET": Entry test (2.5G)
