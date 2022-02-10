@@ -26,3 +26,15 @@ Feel free contribute your own set.
 ## Further resources
 
 * Currently active rules in text form: https://corona-ampel.gv.at/aktuelle-massnahmen/bundesweite-massnahmen/
+
+## Tools
+
+```bash
+poetry install
+# To import the current AT-PROD/AT-TEST rules
+poetry run ./make.py import-at
+# To reformat/sort all rules (so diffs are simpler)
+poetry run ./make.py format
+# Build the web directory served via GitHub Pages
+poetry run ./make.py build <somedir>
+```
