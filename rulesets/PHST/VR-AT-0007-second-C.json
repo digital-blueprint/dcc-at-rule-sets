@@ -7,13 +7,13 @@
     "Country": "AT",
     "Description": [
         {
-            "desc": "If (Vaccine == Johnson && dn >= sd && dn != 1) -> Verification Datetime must be less than 270 days after vaccination date",
+            "desc": "If (Vaccine == Johnson && dn >= sd && dn != 1 && dn = 2) & 18y or older -> Verification Datetime must be less than 180 days after vaccination date",
             "lang": "en"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "VR-PHST-0007-booster",
+    "Identifier": "VR-AT-0007-second-C",
     "Logic": {
         "if": [
             {
@@ -41,11 +41,33 @@
                                 ]
                             },
                             {
-                                ">": [
+                                "===": [
                                     {
                                         "var": "payload.v.0.dn"
                                     },
-                                    1
+                                    2
+                                ]
+                            },
+                            {
+                                "not-after": [
+                                    {
+                                        "plusTime": [
+                                            {
+                                                "var": "payload.dob"
+                                            },
+                                            18,
+                                            "year"
+                                        ]
+                                    },
+                                    {
+                                        "plusTime": [
+                                            {
+                                                "var": "external.validationClock"
+                                            },
+                                            0,
+                                            "day"
+                                        ]
+                                    }
                                 ]
                             }
                         ]
@@ -75,7 +97,7 @@
                                     {
                                         "var": "payload.v.0.dt"
                                     },
-                                    270,
+                                    180,
                                     "day"
                                 ]
                             }
@@ -90,7 +112,7 @@
     "Region": "ET",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
-    "ValidFrom": "2021-08-15T00:00:00Z",
-    "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.2"
+    "ValidFrom": "2022-01-31T23:00:00Z",
+    "ValidTo": "2030-01-31T23:00:00Z",
+    "Version": "1.0.13"
 }
