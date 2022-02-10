@@ -22,3 +22,7 @@ The format of the rule sets mirrors the CBOR decoded business rules as described
 here: https://github.com/Federal-Ministry-of-Health-AT/green-pass-overview
 
 Feel free contribute your own set.
+
+## Further resources
+
+* Currently active rules in text form: https://corona-ampel.gv.at/aktuelle-massnahmen/bundesweite-massnahmen/
