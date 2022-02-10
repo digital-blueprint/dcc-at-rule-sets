@@ -1,31 +1,30 @@
 {
     "AffectedFields": [
-        "t.0.sc",
-        "t.0.tt"
+        "r.0",
+        "r.0.fr"
     ],
-    "CertificateType": "Test",
+    "CertificateType": "Recovery",
     "Country": "AT",
     "Description": [
         {
-            "desc": "DateTime of Sample Collection must be less than 24 hours before the Verification Datetime for a test of type RAT (rapid antigen test).",
+            "desc": "The positive NAA test result (e.g., PCR) must be no older than 180 days.",
             "lang": "en"
+        },
+        {
+            "desc": "Der positive NAA-Test (z.B. PCR) darf maximal 180 Tage zurückliegen.",
+            "lang": "de"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "TR-PLUS-0005",
+    "Identifier": "RR-AT-0002",
     "Logic": {
         "if": [
             {
-                "===": [
-                    {
-                        "var": "payload.t.0.tt"
-                    },
-                    "LP217198-3"
-                ]
+                "var": "payload.r.0"
             },
             {
-                "before": [
+                "not-after": [
                     {
                         "plusTime": [
                             {
@@ -38,10 +37,10 @@
                     {
                         "plusTime": [
                             {
-                                "var": "payload.t.0.sc"
+                                "var": "payload.r.0.fr"
                             },
-                            24,
-                            "hour"
+                            180,
+                            "day"
                         ]
                     }
                 ]
@@ -52,7 +51,7 @@
     "Region": "ET",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
-    "ValidFrom": "2021-09-15T05:00:00Z",
+    "ValidFrom": "2021-07-01T00:00:00Z",
     "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.0"
+    "Version": "1.0.12"
 }
