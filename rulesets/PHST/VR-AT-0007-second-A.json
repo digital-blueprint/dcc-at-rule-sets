@@ -1,21 +1,19 @@
 {
     "AffectedFields": [
         "v.0.mp",
-        "v.0.dn",
-        "v.0.sd",
         "v.0.dt"
     ],
     "CertificateType": "Vaccination",
     "Country": "AT",
     "Description": [
         {
-            "desc": "If (Vaccine <> Johnson) & (sequencenumber >= total number of doses) -> Verification Datetime must be less than 270 days after vaccination date",
+            "desc": "If (Vaccine == Johnson && dn >= sd && dn != 1 && dn = 2) & up until 12y -> Verification Datetime must be less than 180 days after vaccination date",
             "lang": "en"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "VR-PHST-0008",
+    "Identifier": "VR-AT-0007-second-A",
     "Logic": {
         "if": [
             {
@@ -24,21 +22,53 @@
                         "var": "payload.v.0.mp"
                     },
                     [
-                        "EU/1/20/1528",
-                        "EU/1/20/1507",
-                        "EU/1/21/1529"
+                        "EU/1/20/1525"
                     ]
                 ]
             },
             {
                 "if": [
                     {
-                        ">=": [
+                        "and": [
                             {
-                                "var": "payload.v.0.dn"
+                                ">=": [
+                                    {
+                                        "var": "payload.v.0.dn"
+                                    },
+                                    {
+                                        "var": "payload.v.0.sd"
+                                    }
+                                ]
                             },
                             {
-                                "var": "payload.v.0.sd"
+                                "===": [
+                                    {
+                                        "var": "payload.v.0.dn"
+                                    },
+                                    2
+                                ]
+                            },
+                            {
+                                "after": [
+                                    {
+                                        "plusTime": [
+                                            {
+                                                "var": "payload.dob"
+                                            },
+                                            12,
+                                            "year"
+                                        ]
+                                    },
+                                    {
+                                        "plusTime": [
+                                            {
+                                                "var": "external.validationClock"
+                                            },
+                                            0,
+                                            "day"
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -67,7 +97,7 @@
                                     {
                                         "var": "payload.v.0.dt"
                                     },
-                                    270,
+                                    180,
                                     "day"
                                 ]
                             }
@@ -82,7 +112,7 @@
     "Region": "ET",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
-    "ValidFrom": "2021-09-15T05:00:00Z",
-    "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.2"
+    "ValidFrom": "2022-01-31T23:00:00Z",
+    "ValidTo": "2030-01-31T23:00:00Z",
+    "Version": "1.0.13"
 }

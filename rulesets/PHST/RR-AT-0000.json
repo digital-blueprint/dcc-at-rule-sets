@@ -12,7 +12,7 @@
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "RR-PHST-0000",
+    "Identifier": "RR-AT-0000",
     "Logic": {
         "!": [
             {
@@ -25,5 +25,5 @@
     "Type": "Acceptance",
     "ValidFrom": "2021-07-01T00:00:00Z",
     "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.0"
+    "Version": "1.0.12"
 }
