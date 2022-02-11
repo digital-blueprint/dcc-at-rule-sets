@@ -1,30 +1,31 @@
 {
     "AffectedFields": [
-        "r.0",
-        "r.0.fr"
+        "t.0.sc",
+        "t.0.tt"
     ],
-    "CertificateType": "Recovery",
+    "CertificateType": "Test",
     "Country": "AT",
     "Description": [
         {
-            "desc": "The positive NAA test result (e.g., PCR) must be no older than 180 days.",
+            "desc": "DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test).",
             "lang": "en"
-        },
-        {
-            "desc": "Der positive NAA-Test (z.B. PCR) darf maximal 180 Tage zurückliegen.",
-            "lang": "de"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "RR-TUGRAZ-0002",
+    "Identifier": "TR-AT-0006",
     "Logic": {
         "if": [
             {
-                "var": "payload.r.0"
+                "===": [
+                    {
+                        "var": "payload.t.0.tt"
+                    },
+                    "LP6464-4"
+                ]
             },
             {
-                "not-after": [
+                "before": [
                     {
                         "plusTime": [
                             {
@@ -37,10 +38,10 @@
                     {
                         "plusTime": [
                             {
-                                "var": "payload.r.0.fr"
+                                "var": "payload.t.0.sc"
                             },
-                            180,
-                            "day"
+                            72,
+                            "hour"
                         ]
                     }
                 ]
@@ -51,7 +52,7 @@
     "Region": "ET",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
-    "ValidFrom": "2021-07-01T00:00:00Z",
+    "ValidFrom": "2021-12-09T00:00:00Z",
     "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.0"
+    "Version": "1.0.12"
 }

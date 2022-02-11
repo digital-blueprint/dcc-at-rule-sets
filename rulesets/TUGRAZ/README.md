@@ -6,5 +6,5 @@ Country:
 * always "AT"
 
 Region:
-* "ET": Entry test for exams (~2.5G)
+* "ET": Entry test for exams (2.5G)
 * "ET-LV": Entry for everything except exams (1G/PCR Tested)
