@@ -150,7 +150,7 @@ async def import_at(args):
                 continue
             sub = os.path.join(target, decoded["Region"])
             os.makedirs(sub, exist_ok=True)
-            json_target = os.path.join(sub, decoded["Identifier"] + ".json")
+            json_target = os.path.join(sub, decoded["Identifier"] + "-" + decoded["Version"] + ".json")
             assert not os.path.exists(json_target)
             with open(json_target, "w", encoding="utf-8") as h:
                 h.write(json.dumps(decoded, sort_keys=True, indent=4, ensure_ascii=False))
