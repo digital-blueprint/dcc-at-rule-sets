@@ -144,13 +144,23 @@ async def import_at(args):
         os.makedirs(target, exist_ok=True)
 
         prod_rules = await fetch_austria_data_and_verify(is_test, "rules")
+        to_import = []
         for entry in prod_rules["r"]:
             decoded = json.loads(entry["r"])
             if decoded["Country"] != "AT" or decoded["Engine"] != "CERTLOGIC":
                 continue
+            to_import.append(decoded)
+
+        def get_unique_name(decoded):
+            for e in to_import:
+                if e is not decoded and e["Identifier"] == decoded["Identifier"] and e["Region"] == decoded["Region"]:
+                    return decoded["Identifier"] + "-" + decoded["Version"]
+            return decoded["Identifier"]
+
+        for decoded in to_import:
             sub = os.path.join(target, decoded["Region"])
             os.makedirs(sub, exist_ok=True)
-            json_target = os.path.join(sub, decoded["Identifier"] + "-" + decoded["Version"] + ".json")
+            json_target = os.path.join(sub, get_unique_name(decoded) + ".json")
             assert not os.path.exists(json_target)
             with open(json_target, "w", encoding="utf-8") as h:
                 h.write(json.dumps(decoded, sort_keys=True, indent=4, ensure_ascii=False))
