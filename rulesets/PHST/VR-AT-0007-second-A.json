@@ -7,7 +7,7 @@
     "Country": "AT",
     "Description": [
         {
-            "desc": "If (Vaccine == Johnson && dn >= sd && dn != 1 && dn = 2) & up until 12y -> Verification Datetime must be less than 180 days after vaccination date",
+            "desc": "If (Vaccine == Johnson && dn >= sd && dn != 1 && dn = 2) & younger than 18y -> Verification Datetime must be less than 210 days after vaccination date",
             "lang": "en"
         }
     ],
@@ -55,7 +55,7 @@
                                             {
                                                 "var": "payload.dob"
                                             },
-                                            12,
+                                            18,
                                             "year"
                                         ]
                                     },
@@ -97,7 +97,7 @@
                                     {
                                         "var": "payload.v.0.dt"
                                     },
-                                    180,
+                                    210,
                                     "day"
                                 ]
                             }
