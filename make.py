@@ -65,6 +65,12 @@ async def fetch_austria_data_and_verify(test: bool, thing: str):
     from cryptography import x509
     from cose.keys import EC2Key
     cert = x509.load_pem_x509_certificate(cert)
+    not_valid_before = cert.not_valid_before.astimezone(timezone.utc)
+    not_valid_after = cert.not_valid_after.astimezone(timezone.utc)
+    if not (not_valid_before <= NOW <= not_valid_after):
+        raise Exception(
+            f"cert not valid re time: "
+            f"{not_valid_before.isoformat()} <= {NOW} <= {not_valid_after.isoformat()}")
     public_key = cert.public_key()
     x = public_key.public_numbers().x.to_bytes(32, "big")
     y = public_key.public_numbers().y.to_bytes(32, "big")
