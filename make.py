@@ -86,8 +86,8 @@ async def fetch_austria_data_and_verify(test: bool, thing: str):
     import cbor2
     signature_content = cbor2.loads(cose_msg.payload)
     checksum = signature_content[2]
-    valid_from = signature_content[5]
-    valid_until = signature_content[4]
+    valid_from = datetime.fromtimestamp(signature_content[5], tz=timezone.utc)
+    valid_until = datetime.fromtimestamp(signature_content[4], tz=timezone.utc)
 
     async with httpx.AsyncClient() as client:
         r = await client.get(f"{base_url}/{thing}")
@@ -95,8 +95,10 @@ async def fetch_austria_data_and_verify(test: bool, thing: str):
         content = r.content
     if checksum != hashlib.sha256(content).digest():
         raise Exception()
-    if not (valid_from <= NOW.timestamp() <= valid_until):
-        raise Exception("trust data not valid re time")
+    if not (valid_from <= NOW <= valid_until):
+        raise Exception(
+            f"trust data not valid re time: "
+            f"{valid_from.isoformat()} <= {NOW} <= {valid_until.isoformat()}")
 
     # We can trust the content, so decode it
     return cbor2.loads(content)
