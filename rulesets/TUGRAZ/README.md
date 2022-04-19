@@ -6,4 +6,4 @@ Country:
 * always "AT"
 
 Region:
-* "ET": Entry test (2.5G)
+* "ET": Entry test (3G, but without any time based restrictions)

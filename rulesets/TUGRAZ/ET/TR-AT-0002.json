@@ -1,19 +1,19 @@
 {
     "AffectedFields": [
-        "t.0.sc",
+        "t.0.ma",
         "t.0.tt"
     ],
     "CertificateType": "Test",
     "Country": "AT",
     "Description": [
         {
-            "desc": "DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test).",
+            "desc": "If the test type is \"RAT\" then the \"test product and manufacturer\" MUST be in the valueset list, if it's NAA return true.",
             "lang": "en"
         }
     ],
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.7.5",
-    "Identifier": "TR-AT-0006",
+    "Identifier": "TR-AT-0002",
     "Logic": {
         "if": [
             {
@@ -21,28 +21,16 @@
                     {
                         "var": "payload.t.0.tt"
                     },
-                    "LP6464-4"
+                    "LP217198-3"
                 ]
             },
             {
-                "before": [
+                "in": [
                     {
-                        "plusTime": [
-                            {
-                                "var": "external.validationClock"
-                            },
-                            0,
-                            "day"
-                        ]
+                        "var": "payload.t.0.ma"
                     },
                     {
-                        "plusTime": [
-                            {
-                                "var": "payload.t.0.sc"
-                            },
-                            72,
-                            "hour"
-                        ]
+                        "var": "external.valueSets.covid-19-lab-test-manufacturer-and-name"
                     }
                 ]
             },
