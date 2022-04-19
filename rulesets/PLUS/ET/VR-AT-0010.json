@@ -1,0 +1,43 @@
+{
+    "AffectedFields": [
+        "v.0.ci"
+    ],
+    "CertificateType": "Vaccination",
+    "Country": "AT",
+    "Description": [
+        {
+            "desc": "UVCIs of the given list are fake -> set to invalid",
+            "lang": "en"
+        }
+    ],
+    "Engine": "CERTLOGIC",
+    "EngineVersion": "0.7.5",
+    "Identifier": "VR-AT-0010",
+    "Logic": {
+        "if": [
+            {
+                "in": [
+                    {
+                        "var": "payload.v.0.ci"
+                    },
+                    [
+                        "UVCI:01DE/IZ14482A/2BYU1VFE8L2JDQJHY1QVSK#E",
+                        "UVCI:01:PL:1/2A992C33754A4D379A7F61089485BB75",
+                        "URN:UVCI:01:FR:W7V2BE46QSBJ#L",
+                        "URN:UVCI:01:FR:T5DWTJYS4ZR8#4",
+                        "URN:UVCI:01DE/A80013335/TCXSI5Q08B0DIJGMIZJDF#T",
+                        "URN:UVCI:01:PL:1/AF2AA5873FAF45DFA826B8A01237BDC4"
+                    ]
+                ]
+            },
+            false,
+            true
+        ]
+    },
+    "Region": "ET",
+    "SchemaVersion": "1.0.0",
+    "Type": "Acceptance",
+    "ValidFrom": "2021-11-01T00:00:00Z",
+    "ValidTo": "2030-06-01T00:00:00Z",
+    "Version": "1.0.12"
+}

@@ -1,14 +1,14 @@
 {
     "AffectedFields": [
         "r",
-        "t",
-        "v"
+        "v",
+        "t"
     ],
     "CertificateType": "General",
     "Country": "AT",
     "Description": [
         {
-            "desc": "Exactly one type of event.",
+            "desc": "Exactly one type of event. r, v and t",
             "lang": "en"
         },
         {
@@ -59,7 +59,7 @@
     "Region": "ET",
     "SchemaVersion": "1.0.0",
     "Type": "Acceptance",
-    "ValidFrom": "2021-12-09T00:00:00Z",
+    "ValidFrom": "2022-02-18T23:00:00Z",
     "ValidTo": "2030-06-01T00:00:00Z",
-    "Version": "1.0.12"
+    "Version": "1.0.13"
 }
