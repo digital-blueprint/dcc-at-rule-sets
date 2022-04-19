@@ -6,4 +6,4 @@ Country:
 * always "AT"
 
 Region:
-* "ET": Entry test (3G, but without any time based restrictions)
+* "ET": Entry test (3G, but just to match the Greenpass App, there are no real Greenpass based restrictions anymore)
