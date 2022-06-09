@@ -78,7 +78,8 @@ async def fetch_austria_data_and_verify(test: bool, thing: str):
 
     # Set the key and verify the signature
     cose_msg.key = cose_key
-    cose_msg.verify_signature()
+    if not cose_msg.verify_signature():
+        raise Exception("invalid siganture")
 
     # Load the content and check that the checksum matches
     # and that it is still valid
