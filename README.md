@@ -3,6 +3,11 @@
 The goal of this project is to maintain a set of covid certificate business
 rule sets that are applicable in Austria.
 
+**Note:** This project depends on the DCC infrastructure of the Austrian
+Government. Since the DCC infrastructure is [no longer available since June
+2023](https://github.com/Federal-Ministry-of-Health-AT/green-pass-overview/issues/11#issuecomment-1617997232),
+this project is no longer actively maintained.
+
 Maintained sets:
 
 * **TUGRAZ:** The rules for "TU Graz". [See details](./rulesets/TUGRAZ/README.md)
